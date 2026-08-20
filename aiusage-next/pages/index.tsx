@@ -24,6 +24,12 @@ import '@ux/text/dist/styles.css';
 
 const pivotList = [
   {
+    graphic: (<Wand />),
+    href: '/usage',
+    subtitle: 'View AI usage data from the aiusage-api service',
+    title: 'AI Usage'
+  },
+  {
     graphic: (<Settings />),
     href: 'http://gdl.ink/gasket',
     subtitle: 'Learn more about working with Gasket',

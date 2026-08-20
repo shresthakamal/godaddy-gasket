@@ -5,6 +5,13 @@ export const defaultHandler = async (req, res) => {
   });
 };
 
+export const usageHandler = async (req, res) => {
+  res.status(200).json({
+    totalTokens: 128_450,
+    period: '2026-08'
+  });
+};
+
 export default {
   name: 'routes-plugin',
   hooks: {
@@ -24,6 +31,22 @@ export default {
       *           application/json
       */
       app.get('/default', defaultHandler);
+
+      /**
+      * @swagger
+      *
+      * /usage:
+      *   get:
+      *     summary: "Get AI usage summary"
+      *     produces:
+      *       - "application/json"
+      *     responses:
+      *       "200":
+      *         description: "Returns usage summary."
+      *         content:
+      *           application/json
+      */
+      app.get('/usage', usageHandler);
     }
   }
 };

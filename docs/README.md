@@ -17,6 +17,7 @@ These chapters move from high-level architecture to file-level details. Each cha
 | 7 | [GoDaddy Integrations](./07-godaddy-integrations.md) | Auth, Presentation Central, Traffic, Intl, Atlas, and more |
 | 8 | [Extending Your App](./08-extending-your-app.md) | Adding pages, plugins, local hooks, and keeping clean boundaries |
 | 9 | [Web + API Full Stack](./09-web-and-api-full-stack.md) | Creating the API app, configuring both apps, and wiring them together |
+| 10 | [Local HTTPS and Dev Certs](./10-local-https-and-dev-certs.md) | Why HTTPS locally, dev-certs, browser trust, and "Not Secure" warnings |
 
 ## Prerequisites
 

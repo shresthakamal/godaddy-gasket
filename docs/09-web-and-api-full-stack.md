@@ -42,7 +42,7 @@ GoDaddy’s architecture separates **Customer Experience** (web) from **Service 
 │  ─────────────────────────────────────────────────────────  │
 │  plugins/routes-plugin.ts     Express REST routes          │
 │  server.ts                    gasket.actions.startServer()│
-│  /default, /api/users, ...    Swagger/OpenAPI docs          │
+│  /default, /usage, ...        Swagger/OpenAPI docs          │
 └──────────────────────────┬──────────────────────────────────┘
                            │
                            ▼
@@ -115,35 +115,45 @@ gasket.actions.startServer();  // Express HTTPS server
 
 ## Step 3: Add Your First API Endpoint
 
+This stack implements a **`GET /usage`** endpoint in `aiusage-api` that returns AI usage summary data. The web app consumes it at `/usage` via server-side rendering.
+
+### API route — `plugins/routes-plugin.ts`
+
 Edit `plugins/routes-plugin.ts` in the API app:
 
 ```ts
+export const usageHandler = async (req, res) => {
+  res.status(200).json({
+    totalTokens: 128_450,
+    period: '2026-08'
+  });
+};
+
 export default {
   name: 'routes-plugin',
   hooks: {
     express(gasket, app) {
       /**
-       * @swagger
-       * /api/usage:
-       *   get:
-       *     summary: Get AI usage summary
-       *     responses:
-       *       200:
-       *         description: Usage data
-       */
-      app.get('/api/usage', async (req, res) => {
-        const logger = gasket.actions.getLogger();
-        logger.info({ msg: 'Fetching usage summary' });
-
-        res.status(200).json({
-          totalTokens: 128_450,
-          period: '2026-08'
-        });
-      });
+      * @swagger
+      *
+      * /usage:
+      *   get:
+      *     summary: "Get AI usage summary"
+      *     produces:
+      *       - "application/json"
+      *     responses:
+      *       "200":
+      *         description: "Returns usage summary."
+      *         content:
+      *           application/json
+      */
+      app.get('/usage', usageHandler);
     }
   }
 };
 ```
+
+Exporting `usageHandler` separately makes it easy to unit test (see `aiusage-api/test/index.test.ts`).
 
 Register the plugin in `gasket.ts` (already included in the template):
 
@@ -156,10 +166,13 @@ plugins: [
 ]
 ```
 
+The API listens on port **8444** locally (configured in `gasket.ts` so it does not clash with the web app proxy on 8443).
+
 Test locally:
 
 ```bash
-curl -k https://localhost:<api-port>/api/usage
+curl -k https://local.gasket.dev-godaddy.com:8444/usage
+# → {"totalTokens":128450,"period":"2026-08"}
 ```
 
 Run `npm run docs` to regenerate Swagger documentation.
@@ -240,10 +253,13 @@ export default {
 **Web app `.env` (local):**
 
 ```bash
-API_SERVICE_URL=https://localhost:<api-port>
+# Use the dev-godaddy.com hostname — localhost fails TLS with Gasket dev certs
+API_SERVICE_URL=https://local.gasket.dev-godaddy.com:8444
 ```
 
 In Katana, set `API_SERVICE_URL` to the internal service URL for the API app (not the public browser URL if they differ).
+
+> **Local dev hostname rule:** Both apps use `@godaddy/gasket-plugin-dev-certs`. Certs are issued for `*.dev-godaddy.com`, not `localhost`. Browser and server-side fetch must use `local.gasket.dev-godaddy.com`, not `localhost`.
 
 ### 5c. API app `gasket-data.ts`
 
@@ -276,47 +292,178 @@ swagger: {
 
 ---
 
-## Step 6: Connect Web App to API
+---
 
-Three common patterns. Pick based on security and CORS needs.
+## Step 6: Connect Web App to API — `/usage` Worked Example
 
-### Pattern A: Server-side fetch in `getServerSideProps` (recommended for SSR)
+This section documents the **actual `/usage` implementation** in this stack: API endpoint → config → server-side fetch → UI page.
 
-The browser never talks to the API directly. Next.js server calls the API during SSR.
+### End-to-end flow
 
-```tsx
-// pages/usage.tsx
-import type { GetServerSideProps } from 'next';
+```text
+Browser → https://local.gasket.dev-godaddy.com:8443/usage
+              │
+              ▼
+         getServerSideProps (pages/usage.tsx)
+              │
+              ▼
+         fetchFromApi('/usage')  (lib/fetch-api.ts)
+              │
+              │  reads apiServiceUrl via gasket.actions.getGasketData()
+              ▼
+         https://local.gasket.dev-godaddy.com:8444/usage
+              │
+              ▼
+         usageHandler (plugins/routes-plugin.ts)
+              │
+              ▼
+         { totalTokens: 128450, period: "2026-08" }
+```
 
-interface UsagePageProps {
-  usage: { totalTokens: number; period: string };
+### 6a. Config — `gasket-data.ts` + `.env`
+
+Map the env var once in `gasket-data.ts` (server-only — not under `public`):
+
+```ts
+// aiusage-next/gasket-data.ts
+export default {
+  apiServiceUrl: process.env.API_SERVICE_URL,
+  public: {}
+};
+```
+
+Set the value in `.env`:
+
+```bash
+API_SERVICE_URL=https://local.gasket.dev-godaddy.com:8444
+```
+
+App code reads config through Gasket — not `process.env` directly:
+
+```ts
+const { apiServiceUrl } = await gasket.actions.getGasketData();
+```
+
+### 6b. Server-side fetch helper — `lib/fetch-api.ts`
+
+A shared helper for calling the API from Next.js server code:
+
+```ts
+// aiusage-next/lib/fetch-api.ts
+import https from 'node:https';
+import gasket from '@/gasket';
+
+export async function fetchFromApi<T>(path: string): Promise<T> {
+  const { apiServiceUrl } = await gasket.actions.getGasketData();
+
+  if (!apiServiceUrl) {
+    throw new Error('apiServiceUrl is not configured in gasket-data.ts');
+  }
+
+  const url = `${apiServiceUrl}${path.startsWith('/') ? path : `/${path}`}`;
+  const isLocalDev = process.env.NODE_ENV === 'development';
+
+  const response = isLocalDev
+    ? await fetchWithDevTls(url)
+    : await fetch(url);
+
+  if (!response.ok) {
+    throw new Error(`API request failed: ${response.status}`);
+  }
+
+  return response.json() as Promise<T>;
 }
 
-export default function UsagePage({ usage }: UsagePageProps) {
+function fetchWithDevTls(url: string): Promise<Response> {
+  return new Promise((resolve, reject) => {
+    https.get(url, { rejectUnauthorized: false }, (res) => {
+      const chunks: Buffer[] = [];
+      res.on('data', (chunk) => chunks.push(chunk));
+      res.on('end', () => {
+        resolve(new Response(Buffer.concat(chunks), {
+          status: res.statusCode ?? 500,
+          headers: res.headers as HeadersInit
+        }));
+      });
+    }).on('error', reject);
+  });
+}
+```
+
+`fetchWithDevTls` accepts self-signed dev certs during local SSR. Production uses normal `fetch` with trusted Katana certs.
+
+### 6c. UI page — `pages/usage.tsx`
+
+Server-side rendering via `getServerSideProps`. The browser never calls the API directly.
+
+```tsx
+// aiusage-next/pages/usage.tsx
+import React from 'react';
+import type { GetServerSideProps } from 'next';
+import { fetchFromApi } from '../lib/fetch-api.ts';
+
+export interface UsageSummary {
+  totalTokens: number;
+  period: string;
+}
+
+interface UsagePageProps {
+  usage: UsageSummary | null;
+  error: string | null;
+}
+
+export function UsagePage({ usage, error }: UsagePageProps) {
   return (
     <div>
       <h1>AI Usage</h1>
-      <p>Period: {usage.period}</p>
-      <p>Tokens: {usage.totalTokens}</p>
+      {error && <p>{error}</p>}
+      {usage && (
+        <>
+          <p>Period: {usage.period}</p>
+          <p>Total tokens: {usage.totalTokens.toLocaleString('en-US')}</p>
+        </>
+      )}
     </div>
   );
 }
 
 export const getServerSideProps: GetServerSideProps<UsagePageProps> = async () => {
-  const apiUrl = process.env.API_SERVICE_URL;
-  const res = await fetch(`${apiUrl}/api/usage`);
-
-  if (!res.ok) {
-    return { notFound: true };
+  try {
+    const usage = await fetchFromApi<UsageSummary>('/usage');
+    return { props: { usage, error: null } };
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Unknown error';
+    return { props: { usage: null, error: message } };
   }
-
-  const usage = await res.json();
-  return { props: { usage } };
 };
+
+export default UsagePage;
 ```
+
+Use `toLocaleString('en-US')` with a fixed locale to avoid hydration mismatches between server and client.
+
+Add a link from the homepage (`pages/index.tsx`) so users can navigate to `/usage`.
+
+### 6d. Verify locally
+
+```text
+□ aiusage-api running  → curl -k https://local.gasket.dev-godaddy.com:8444/usage
+□ aiusage-next running → open https://local.gasket.dev-godaddy.com:8443/usage
+□ Page shows period and token count
+```
+
+---
+
+## Step 7: Alternative Connection Patterns
+
+The `/usage` example uses **Pattern A (SSR)**. Two other patterns work when client-side fetch is needed.
+
+### Pattern A: Server-side fetch in `getServerSideProps` (used by `/usage`)
 
 **Pros:** No CORS issues, API URL stays server-side.  
 **Cons:** Data fetched on each request (add caching as needed).
+
+See [Step 6](#step-6-connect-web-app-to-api--usage-worked-example) for the full implementation.
 
 ---
 
@@ -330,11 +477,11 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import gasket from '@/gasket';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const apiUrl = process.env.API_SERVICE_URL;
   const logger = gasket.actions.getLogger();
 
   try {
-    const response = await fetch(`${apiUrl}/api/usage`);
+    const { apiServiceUrl } = await gasket.actions.getGasketData();
+    const response = await fetch(`${apiServiceUrl}/usage`);
     const data = await response.json();
     res.status(200).json(data);
   } catch (err) {
@@ -379,7 +526,10 @@ export default makeGasket({
     proxies: {
       usageApi: {
         url: '/api/usage',
-        targetUrl: ({ req }) => `${process.env.API_SERVICE_URL}/api/usage`
+        targetUrl: async () => {
+          const { apiServiceUrl } = await gasket.actions.getGasketData();
+          return `${apiServiceUrl}/usage`;
+        }
       }
     }
   }
@@ -405,7 +555,7 @@ See `gasket-repo/packages/gasket-plugin-auth/docs/fetch.md` for:
 
 ---
 
-## Step 7: Shared Conventions Across Both Apps
+## Step 8: Shared Conventions Across Both Apps
 
 Keep these aligned for easier operations:
 
@@ -422,7 +572,7 @@ Both apps log JSON via Winston — use consistent field names (`msg`, `traceId`)
 
 ---
 
-## Step 8: Deploy the Complete Stack
+## Step 9: Deploy the Complete Stack
 
 Each app deploys independently on **Katana**:
 
@@ -439,8 +589,8 @@ Each app deploys independently on **Katana**:
 
 4. Verify
    - Web: /healthcheck → { status: 'ok' }
-   - API: GET /api/usage → 200
-   - End-to-end: load web page that fetches usage data
+   - API: GET /usage → 200
+   - End-to-end: load https://<web-app>/usage
 ```
 
 ```text
@@ -485,6 +635,29 @@ Two repos, two appcodes, two Katana deployments. Some teams use a monorepo — t
 
 ## Common Mistakes
 
+### Using `localhost` instead of `local.gasket.dev-godaddy.com`
+
+```text
+Bad:  API_SERVICE_URL=https://localhost:8444
+Good: API_SERVICE_URL=https://local.gasket.dev-godaddy.com:8444
+```
+
+Gasket dev certs are issued for `*.dev-godaddy.com`. Server-side fetch to `localhost` fails TLS even when the API is running.
+
+### Reading `process.env` directly in page code
+
+```text
+Bad:  const url = process.env.API_SERVICE_URL in pages/usage.tsx
+Good: gasket-data.ts maps env → apiServiceUrl; app code uses gasket.actions.getGasketData()
+```
+
+### Hydration mismatch from `toLocaleString()`
+
+```text
+Bad:  usage.totalTokens.toLocaleString()           // server/client locale may differ
+Good: usage.totalTokens.toLocaleString('en-US')   // fixed locale on both sides
+```
+
 ### Putting business logic in `pages/api/*`
 
 ```text
@@ -519,14 +692,15 @@ Good: shared data lives in DB or API; web calls API
 
 ```text
 □ Create aiusage-api with gasket-template-api-express
-□ Add routes in plugins/routes-plugin.ts
+□ Add GET /usage in plugins/routes-plugin.ts
 □ Run both apps locally (two terminals)
-□ Set API_SERVICE_URL in web app .env
-□ Choose connection pattern (SSR / BFF / proxy plugin)
+□ Set API_SERVICE_URL in web app .env (use dev-godaddy.com hostname)
+□ Add lib/fetch-api.ts and pages/usage.tsx (SSR pattern)
+□ Choose alternative pattern if needed (BFF / proxy plugin)
 □ Create two appcodes in GoDaddy Cloud UI
 □ Deploy API, then web app
 □ Set API_SERVICE_URL in Katana for web app
-□ Verify /healthcheck (web) and API endpoints
+□ Verify /healthcheck (web) and GET /usage (API)
 □ Confirm OTEL_SERVICE_NAME differs per app
 ```
 
@@ -536,9 +710,11 @@ Good: shared data lives in DB or API; web calls API
 
 1. **Two apps, two repos, two deployments** — web for UI, API for business logic.
 2. **`aiusage-next` already exists** — create `aiusage-api` separately with `create-gasket-app`.
-3. **Configure linkage via env vars** (`API_SERVICE_URL`), not shared `gasket.ts` files.
-4. **Prefer server-side or BFF calls** from web to API — avoid exposing internal URLs to the browser.
-5. **Both apps share Gasket patterns** (plugins, `gdEnv()`, logging, OTel) but different presets and server models.
+3. **Configure linkage via env vars** (`API_SERVICE_URL` → `gasket-data.ts` → `getGasketData()`), not raw `process.env` in pages.
+4. **The `/usage` example** shows the full path: API route → config → `fetchFromApi` → SSR page.
+5. **Use `local.gasket.dev-godaddy.com` locally** — not `localhost` — for Gasket dev cert compatibility.
+6. **Prefer server-side or BFF calls** from web to API — avoid exposing internal URLs to the browser.
+7. **Both apps share Gasket patterns** (plugins, `gdEnv()`, logging, OTel) but different presets and server models.
 
 ---
 
