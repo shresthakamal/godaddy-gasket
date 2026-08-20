@@ -1,0 +1,74 @@
+name: Deploy Docs Site to Github Pages
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+env:
+  AWS_REGION: us-west-2
+  NODE_OPTIONS: --max-old-space-size=6144
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.1.0 # TODO: upgrade to v5+ when pnpm/action-setup#234 is fixed (v6 requires npm on PATH)
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: pnpm
+
+      - name: Get Artifactory Read-Only Token
+        uses: jfrog/setup-jfrog-cli@1641575d87647fb969c0545f0b6a76873e328b7c # v5.0.0
+        id: jfrog
+        env:
+          JF_URL: ${{ vars.JF_URL }} # This variable is configured org wide
+        with:
+          oidc-provider-name: github
+
+      - name: Install Dependencies
+        run: pnpm install --prefer-offline
+        env:
+          ARTIFACTORY_TOKEN: ${{ steps.jfrog.outputs.oidc-token }}
+          NPM_CONFIG_USERCONFIG: ${{ github.workspace }}/.npmrc.gha
+
+      - name: Build documentation
+        run: pnpm run docs
+
+      - name: Build site
+        working-directory: site
+        run: pnpm run build
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v6
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: site/build
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

@@ -1,0 +1,66 @@
+{
+    "@ux/application-sidebar": {
+        "files": [
+            {
+                "url": "https://img6.wsimg.com/wrhs-next/sha/application-sidebar.js"
+            },
+            {
+                "url": "https://img6.wsimg.com/wrhs-next/sha/application-sidebar.css",
+                "metadata": {
+                    "path": "autoapplication-sidebar.css",
+                    "isChunk": false
+                }
+            },
+            {
+                "url": "https://img6.wsimg.com/wrhs-next/sha/application-sidebar.js.map",
+                "metadata": {
+                    "path": "autoapplication-sidebar.js.map",
+                    "isChunk": false
+                }
+            },
+            {
+                "url": "https://img6.wsimg.com/wrhs-next/sha/opt-out-modal.application-sidebar.js",
+                "metadata": {
+                    "path": "autoopt-out-modal.application-sidebar.js",
+                    "isChunk": true
+                }
+            },
+            {
+                "url": "https://img6.wsimg.com/wrhs-next/sha/symbol-icons.js",
+                "metadata": {
+                    "path": "symbol-icons.js",
+                    "isChunk": true
+                }
+            },
+            {
+                "url": "https://img6.wsimg.com/wrhs-next/sha/opt-out-modal.application-sidebar.js.map",
+                "metadata": {
+                    "path": "autoopt-out-modal.application-sidebar.js.map",
+                    "isChunk": false
+                }
+            },
+            {
+                "url": "https://img6.wsimg.com/wrhs-next/sha/vendor.min.js",
+                "metadata": {
+                    "path": "vendor.min.js",
+                    "isChunk": false
+                }
+
+            }
+        ],
+        "fingerprints": [
+            "sha.gz",
+            "sha.gz",
+            "sha.gz",
+            "sha.gz",
+            "sha.gz"
+        ],
+        "recommended": [
+            "sha/application-sidebar.js",
+            "sha/application-sidebar.js.map",
+            "sha/opt-out-modal.application-sidebar.js",
+            "sha/opt-out-modal.application-sidebar.js.map",
+            "sha/vendor.min.js"
+        ]
+    }
+}

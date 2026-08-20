@@ -1,0 +1,88 @@
+# Upgrades
+
+Gasket plugins and packages can be connected to one another, so if you find that
+you need a change in a major revision of a plugin, it is recommended to just get
+everything up to date to avoid unintended conflicts. Otherwise, paying attention
+to `peerDependencies` warnings also is a good way to mitigate incompatibilities.
+
+## Major Upgrades
+
+Major upgrades usually require special attention as sometimes code changes in
+your apps and plugins may be required. The following guides are sequential and
+will help make the necessary changes when upgrading to latest.
+
+- [Upgrade to v7] – _Active_
+  - [Upgrade to Next.js 16]
+- [Upgrade to v6] – _LTS_
+  - [Upgrade to Next.js 13]
+  - [Upgrade to Next.js 12]
+- [Upgrade to v5]
+- [Upgrade to v3]
+- [Upgrade to v2]
+
+The [gasket-upgrade] CLI tool handles many of the upgrade steps for you.
+
+First, install the package globally:
+
+```bash
+npm install --global @godaddy/gasket-upgrade-cli
+```
+
+Then in the root of your Gasket app:
+
+```bash
+gasket-upgrade
+```
+
+## Minor and Patch Upgrades
+
+The first thing to do is to update all your Gasket dependencies to latest. You
+can find out what packages are behind and what the latest versions are, by using
+`npm outdated`.
+
+Tools like [npm-check] for npm apps, or yarn's [upgrade-interactive] make this
+easy.
+
+First, install `npm-check` globally:
+
+```bash
+npm install --global npm-check
+```
+
+Then in the root of your Gasket app:
+
+```bash
+npm-check -u --latest
+```
+
+Select all packages with `@gasket/*` and `@gasket/godaddy-*` prefix.
+
+![npm-check upgrades](images/npm-check-upgrades.gif)
+
+> TIP: Take your time with upgrades. Don't try to upgrade everything at once
+> which can make debugging difficult if something goes wrong. Instead work in
+> sets, For example start with Gasket packages, test things out and commit
+> change, then move on to React related packages, then test packages, etc.
+
+For yarn apps:
+
+```bash
+yarn upgrade-interactive --latest
+```
+
+> TIP: In other guides `yarn` commands can be implied by their `npm` parallels.
+
+<!-- LINKS -->
+
+[Upgrade to v7]: upgrade-to-7.md
+[Upgrade to Next.js 16]: upgrade-to-next-16.md
+[Upgrade to Next.js 13]: upgrade-to-next-13.md
+[Upgrade to Next.js 12]: upgrade-to-next-12.md
+[Upgrade to v6]: upgrade-to-6.md
+[Upgrade to v5]: upgrade-to-5.md
+[Upgrade to v3]: upgrade-to-3.md
+[Upgrade to v2]: upgrade-to-2.md
+
+[gasket-upgrade]: /packages/gasket-upgrade-cli/README.md
+[npm-check]: https://github.com/dylang/npm-check#npm-check
+[upgrade-interactive]: https://yarnpkg.com/lang/en/docs/cli/upgrade-interactive/

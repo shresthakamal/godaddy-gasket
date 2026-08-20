@@ -1,0 +1,126 @@
+{
+  "name": "@godaddy/gasket-next",
+  "version": "3.7.6",
+  "description": "Gasket extensions and wrappers for Next.js components.",
+  "type": "module",
+  "types": "./src/index.d.ts",
+  "files": [
+    "docs",
+    "document.js",
+    "document.d.ts",
+    "src",
+    "cjs",
+    "EXAMPLES.md"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.js",
+      "require": "./cjs/index.cjs",
+      "default": "./cjs/index.cjs"
+    },
+    "./document": {
+      "types": "./src/document/index.d.ts",
+      "import": "./src/document/index.js",
+      "require": "./cjs/document/index.cjs",
+      "default": "./cjs/document/index.cjs"
+    },
+    "./layout": {
+      "types": "./src/layout/index.d.ts",
+      "import": "./src/layout/index.js",
+      "require": "./cjs/layout/index.cjs",
+      "default": "./cjs/layout/index.cjs"
+    },
+    "./server": {
+      "types": "./src/server/index.d.ts",
+      "import": "./src/server/index.js",
+      "require": "./cjs/server/index.cjs",
+      "default": "./cjs/server/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "gasket-cjs ./src",
+    "build:watch": "pnpm run build --watch",
+    "lint": "eslint .",
+    "lint:fix": "pnpm run lint --fix",
+    "posttest": "pnpm run lint && pnpm run typecheck",
+    "prepublishOnly": "pnpm run build",
+    "test": "vitest run --globals",
+    "test:coverage": "pnpm run test --coverage",
+    "test:watch": "vitest --watch --globals",
+    "typecheck": "tsc",
+    "typecheck:watch": "pnpm run typecheck --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gdcorp-uxp/gasket.git",
+    "directory": "packages/gasket-next"
+  },
+  "publishConfig": {
+    "registry": "https://gdartifactory1.jfrog.io/artifactory/api/npm/npm-gasket-core-local/"
+  },
+  "author": "GoDaddy Operating Company, LLC",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/gdcorp-uxp/gasket/tree/main/packages/gasket-next",
+  "dependencies": {
+    "@gasket/data": "^7.4.4",
+    "@gasket/nextjs": "^7.5.4",
+    "@godaddy/atlas": "^1.2.1",
+    "html-entities": "^2.5.2",
+    "html-react-parser": "^5.2.2",
+    "next-rum": "^1.2.0",
+    "prop-types": "^15.8.1"
+  },
+  "devDependencies": {
+    "@gasket/cjs": "^7.0.2",
+    "@gasket/react-intl": "^7.5.2",
+    "@gasket/request": "^7.4.3",
+    "@godaddy/browserslist-config": "^3.1.0",
+    "@godaddy/gasket-auth": "workspace:^",
+    "@godaddy/gasket-cookies": "workspace:^",
+    "@godaddy/gasket-plugin-otel": "workspace:^",
+    "@godaddy/gasket-plugin-traffic": "workspace:^",
+    "@godaddy/gasket-plugin-uxp": "workspace:^",
+    "@godaddy/gasket-plugin-visitor": "workspace:^",
+    "@godaddy/react-mintl": "^3.1.1",
+    "@opentelemetry/api": "^1.9.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@types/node": "^22.18.6",
+    "@types/react": "^19",
+    "@vitest/ui": "^3.2.0",
+    "babel-eslint": "^10.1.0",
+    "next": "^16.1.6",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "typescript": "^5.8.2",
+    "vitest": "^3.2.0"
+  },
+  "peerDependencies": {
+    "@gasket/react-intl": "^7.3.3",
+    "@godaddy/gasket-auth": "^3.3.13",
+    "next": ">=14 <17",
+    "react": "^18.3.1 || ^19.2.4",
+    "react-dom": "^18.3.1 || ^19.2.4"
+  },
+  "gasket": {
+    "metadata": {
+      "guides": [
+        {
+          "name": "Static Page Router Guide",
+          "description": "Static Pages with Next.js App Router",
+          "link": "docs/static-page-routes.md"
+        },
+        {
+          "name": "Static App Router Guide",
+          "description": "Static Pages with Next.js App Router",
+          "link": "docs/static-app-routes.md"
+        }
+      ]
+    }
+  },
+  "browserslist": [
+    "extends @godaddy/browserslist-config"
+  ]
+}

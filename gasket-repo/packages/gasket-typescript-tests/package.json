@@ -1,0 +1,79 @@
+{
+  "name": "@godaddy/gasket-typescript-tests",
+  "private": true,
+  "version": "3.4.3",
+  "description": "Not a published package; hosts unit tests to verify TypeScript support",
+  "files": [
+    "lib"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "posttest": "pnpm run lint",
+    "pretest": "pnpm run typecheck",
+    "test": "tsc --noEmit",
+    "test:watch": "tsc --noEmit --watch",
+    "typecheck": "tsc",
+    "typecheck:watch": "pnpm run typecheck --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gdcorp-uxp/gasket.git",
+    "directory": "packages/gasket-typescript-tests"
+  },
+  "publishConfig": {
+    "registry": "https://gdartifactory1.jfrog.io/artifactory/api/npm/npm-gasket-core-local/"
+  },
+  "keywords": [
+    "gasket",
+    "typescript"
+  ],
+  "author": "GoDaddy Operating Company, LLC",
+  "license": "UNLICENSED",
+  "bugs": "https://github.com/godaddy/gasket/issues",
+  "homepage": "https://github.com/gdcorp-uxp/gasket/tree/main/packages/gasket-typescript-tests",
+  "devDependencies": {
+    "@gasket/core": "^7.7.3",
+    "@gasket/data": "^7.4.4",
+    "@gasket/request": "^7.4.3",
+    "@godaddy/gasket-auth": "workspace:^",
+    "@godaddy/gasket-cookies": "workspace:^",
+    "@godaddy/gasket-hcs": "workspace:^",
+    "@godaddy/gasket-header-nav": "workspace:^",
+    "@godaddy/gasket-next": "workspace:^",
+    "@godaddy/gasket-otel": "workspace:^",
+    "@godaddy/gasket-plugin-auth": "workspace:^",
+    "@godaddy/gasket-plugin-dev-certs": "workspace:^",
+    "@godaddy/gasket-plugin-gocaas": "workspace:^",
+    "@godaddy/gasket-plugin-hcs": "workspace:^",
+    "@godaddy/gasket-plugin-jwt": "workspace:^",
+    "@godaddy/gasket-plugin-otel": "workspace:^",
+    "@godaddy/gasket-plugin-proxy": "workspace:^",
+    "@godaddy/gasket-plugin-security": "workspace:^",
+    "@godaddy/gasket-plugin-security-auth-logging": "workspace:^",
+    "@godaddy/gasket-plugin-security-logger": "workspace:^",
+    "@godaddy/gasket-plugin-self-certs": "workspace:^",
+    "@godaddy/gasket-plugin-shared-header": "workspace:^",
+    "@godaddy/gasket-plugin-switchboard": "workspace:^",
+    "@godaddy/gasket-plugin-traffic": "workspace:^",
+    "@godaddy/gasket-plugin-uxp": "workspace:^",
+    "@godaddy/gasket-plugin-visitor": "workspace:^",
+    "@godaddy/gasket-preset-api": "workspace:^",
+    "@godaddy/gasket-preset-hcs": "workspace:^",
+    "@godaddy/gasket-preset-webapp": "workspace:^",
+    "@godaddy/gasket-private-labels": "workspace:^",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.14",
+    "@types/lru-cache": "^5.1.1",
+    "@types/next": "^9.0.0",
+    "@types/react": "^19",
+    "lru-cache": "^5.1.1",
+    "next": "^16.1.6",
+    "redux": "^4.2.1",
+    "typescript": "^5.8.2",
+    "workbox-build": "^7.3.0"
+  }
+}

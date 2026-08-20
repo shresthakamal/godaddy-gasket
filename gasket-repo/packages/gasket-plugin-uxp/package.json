@@ -1,0 +1,136 @@
+{
+  "name": "@godaddy/gasket-plugin-uxp",
+  "version": "3.12.0",
+  "description": "Webpapp integrations for Presentation Central & UXCore2",
+  "type": "module",
+  "types": "lib/index.d.ts",
+  "files": [
+    "utils.js",
+    "lib",
+    "cjs",
+    "generator",
+    "docs",
+    "EXAMPLES.md"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.js",
+      "require": "./cjs/index.cjs",
+      "default": "./lib/index.js"
+    },
+    "./utils": {
+      "import": "./utils.js",
+      "require": "./cjs/utils.cjs",
+      "default": "./utils.js"
+    }
+  },
+  "scripts": {
+    "build": "gasket-cjs ./lib",
+    "build:watch": "pnpm run build --watch",
+    "lint": "eslint .",
+    "lint:fix": "pnpm run lint --fix",
+    "posttest": "pnpm run lint && pnpm run typecheck",
+    "test": "vitest run --globals",
+    "test:coverage": "pnpm run test --coverage",
+    "test:watch": "vitest --watch --globals",
+    "typecheck": "tsc",
+    "typecheck:watch": "pnpm run typecheck --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gdcorp-uxp/gasket.git",
+    "directory": "packages/gasket-plugin-uxp"
+  },
+  "publishConfig": {
+    "registry": "https://gdartifactory1.jfrog.io/artifactory/api/npm/npm-gasket-core-local/"
+  },
+  "keywords": [
+    "central",
+    "configuration",
+    "gasket",
+    "presentation",
+    "uxcore2",
+    "webpack"
+  ],
+  "author": "GoDaddy Operating Company, LLC",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/gdcorp-uxp/gasket/tree/main/packages/gasket-plugin-uxp",
+  "dependencies": {
+    "@gasket/fetch": "^7.3.6",
+    "@gasket/react-intl": "^7.5.2",
+    "@gasket/request": "^7.4.3",
+    "@gasket/utils": "^7.4.2",
+    "@godaddy/gasket-private-labels": "workspace:^",
+    "@ux/presentation-central": "^4.1.0",
+    "@ux/react-bundle": "^1.3.2",
+    "abort-controller": "^3.0.0",
+    "chalk": "^4.1.2",
+    "deepmerge": "^4.3.1",
+    "millisecond": "^0.1.2",
+    "mkdirp": "^1.0.4",
+    "prop-types": "^15.8.1",
+    "resolves": "^1.0.0",
+    "semver": "^7.7.1",
+    "transform-url": "^1.1.3",
+    "webpack": "^5.98.0"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.26.3",
+    "@gasket/cjs": "^7.0.2",
+    "@gasket/core": "^7.7.3",
+    "@gasket/plugin-https-proxy": "^7.3.12",
+    "@gasket/plugin-intl": "^7.5.4",
+    "@gasket/plugin-logger": "^7.3.5",
+    "@gasket/plugin-manifest": "^7.3.7",
+    "@gasket/plugin-metadata": "^7.4.4",
+    "@gasket/plugin-nextjs": "^7.5.6",
+    "@gasket/plugin-service-worker": "^7.4.4",
+    "@gasket/plugin-webpack": "^7.4.0",
+    "@gasket/plugin-workbox": "^7.3.5",
+    "@godaddy/browserslist-config": "^3.1.0",
+    "@godaddy/gasket-next": "workspace:^",
+    "@godaddy/gasket-plugin-switchboard": "workspace:^",
+    "@godaddy/gasket-plugin-visitor": "workspace:^",
+    "@godaddy/postcss-merge-selectors": "^1.0.1",
+    "@godaddy/react-mintl": "^3.1.1",
+    "@types/node": "^22.18.6",
+    "@ux/pivot": "^2301.10.0",
+    "@vitest/ui": "^3.2.0",
+    "babel-eslint": "^10.1.0",
+    "cookie-parser": "^1.4.7",
+    "create-gasket-app": "^7.4.19",
+    "file-loader": "^6.2.0",
+    "next": "^16.1.6",
+    "postcss": "^8.5.3",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-preset-env": "^7.8.3",
+    "postcss-rtlcss": "^5.6.0",
+    "proxyquire": "^2.1.3",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-transition-group": "^4.4.5",
+    "sass": "^1.85.0",
+    "typescript": "^5.8.2",
+    "url-loader": "^4.1.1",
+    "vitest": "^3.2.0"
+  },
+  "peerDependencies": {
+    "@gasket/plugin-logger": "^7.3.5",
+    "@godaddy/gasket-plugin-switchboard": "workspace:^"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-react"
+    ]
+  },
+  "jest": {
+    "rootDir": "test"
+  },
+  "peerDependenciesMeta": {
+    "@godaddy/gasket-plugin-switchboard": {
+      "optional": true
+    }
+  }
+}

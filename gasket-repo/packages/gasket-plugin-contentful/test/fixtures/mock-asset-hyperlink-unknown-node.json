@@ -1,0 +1,43 @@
+{
+  "nodeType": "paragraph",
+  "data": {},
+  "content": [
+    {
+      "nodeType": "text",
+      "value": "Demo link: ",
+      "marks": [],
+      "data": {}
+    },
+    {
+      "nodeType": "asset-hyperlink",
+      "data": {
+        "target": [
+          "Unknown",
+          {
+            "title": "Some really cool image",
+            "file": {
+              "url": "//some.cdn.net/image.svg",
+              "details": {
+                "size": 24903,
+                "image": {
+                  "width": 234,
+                  "height": 233
+                }
+              },
+              "fileName": "image.svg",
+              "contentType": "image/svg+xml"
+            }
+          }
+        ]
+      },
+      "content": [
+        {
+          "nodeType": "text",
+          "value": "click to see!",
+          "marks": [],
+          "data": {}
+        }
+      ]
+    }
+  ]
+}

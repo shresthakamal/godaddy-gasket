@@ -1,0 +1,174 @@
+[
+  "PageFreeform",
+  {
+    "title": "Domain Names",
+    "slug": "/domain-names",
+    "entryId": "6m1OtVPcd0fllxfdfszUZA",
+    "sections": [
+      [
+        "Billboard",
+        {
+          "entryTitle": "Billboard - Secondary Colorway - Find an awesome web address for your business",
+          "title": [
+            "Fragment",
+            null,
+            [
+              [
+                "h2",
+                null,
+                [
+                  "Find an awesome web address for your business"
+                ]
+              ]
+            ]
+          ],
+          "colorway": "secondary",
+          "content": [
+            "Fragment",
+            null,
+            [
+              [
+                "p",
+                null,
+                [
+                  "See how easily you could find an incredible extension fit for a global brand, just like Cauli Rice did using 123 Reg, the UK’s #1 domain provider."
+                ]
+              ],
+              [
+                "p",
+                null,
+                [
+                  "Testing paragraph with ",
+                  [
+                    "strong",
+                    null,
+                    [
+                      "bold"
+                    ]
+                  ],
+                  ", ",
+                  [
+                    "em",
+                    null,
+                    [
+                      "italics"
+                    ]
+                  ],
+                  ", and ",
+                  [
+                    "strong",
+                    null,
+                    [
+                      [
+                        "em",
+                        null,
+                        [
+                          "both"
+                        ]
+                      ]
+                    ]
+                  ],
+                  ". Also, ",
+                  [
+                    "pre",
+                    null,
+                    [
+                      [
+                        "code",
+                        null,
+                        [
+                          "inline code"
+                        ]
+                      ]
+                    ]
+                  ],
+                  " and ",
+                  [
+                    "u",
+                    null,
+                    [
+                      "underline"
+                    ]
+                  ],
+                  " here."
+                ]
+              ],
+              [
+                "p",
+                null,
+                [
+                  "Demo token: ",
+                  [
+                    "Token",
+                    {
+                      "title": "Price: Total Price:barfoo:10:MONTH",
+                      "bold": false,
+                      "italic": false,
+                      "content": "<span>{{package[barfoo].prices[10:MONTH].salePrice}}</span>",
+                      "entryId": "2tHpmUp9yK4QVBh6cX2l34"
+                    }
+                  ]
+                ]
+              ],
+              [
+                "p",
+                null,
+                [
+                  "Merch Storefront Token: ",
+                  [
+                    "Token",
+                    {
+                      "title": "tld:com:listPrice",
+                      "bold": true,
+                      "italic": true,
+                      "content": "{{tld:com:listPrice}}",
+                      "entryId": "1THIx0EZSdDnuHh9VFvVVK"
+                    }
+                  ]
+                ]
+              ]
+            ]
+          ],
+          "contentPosition": "top",
+          "gradient": true,
+          "imagePosition": "right",
+          "image": {
+            "alt": "alt",
+            "url": "https://img1.wsimg.com/cdn/Image/All/FOS-Intl/1/en-GB/7fe9cc11-83f1-4c3f-9499-f4e6ce8d6e8d/Domainnames_image2_2000x700.jpg"
+          },
+          "entryId": "4iCWXSlGWnACCmz8XSUDWW",
+          "cta": {
+            "url": "https://www.123-reg.co.uk/domain-names/",
+            "label": "Watch the video"
+          },
+          "domainSearch": [
+            "DomainSearch",
+            {
+              "entryTitle": "Billboard - Domain Search",
+              "ariaLabels": {
+                "searchLabel": "label",
+                "searchButton": "label"
+              },
+              "autoCapitalize": false,
+              "autoCompleteMode": "query",
+              "autoCorrect": false,
+              "button": false,
+              "entryId": "3VQ6ANd1SSBprIV1sHuPnY",
+              "icon": true,
+              "maxResults": 10,
+              "placeholder": "My Placeholder",
+              "spellCheck": false,
+              "overlayEnabled": false
+            }
+          ]
+        }
+      ],
+      [
+        "Billboard",
+        {
+          "entryId": "4iCWXSlGWnACCmz8XSUDWW"
+        } 
+      ]
+    ]
+  }
+]

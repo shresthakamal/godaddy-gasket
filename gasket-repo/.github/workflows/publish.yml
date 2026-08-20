@@ -1,0 +1,171 @@
+name: Publish
+run-name: Publish (${{ github.event_name == 'repository_dispatch' && github.event.client_payload.branch || github.ref_name }})
+
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [run-publish]
+
+env:
+  AWS_REGION: us-west-2
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  publish:
+    name: Publish
+    runs-on:
+      group: 6216-uxpci0
+      labels: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+        with:
+          ref: refs/heads/${{ github.event_name == 'repository_dispatch' && github.event.client_payload.branch || github.ref_name }}
+          fetch-depth: 0
+
+      - name: Get Artifactory Read-Only Token
+        uses: jfrog/setup-jfrog-cli@1641575d87647fb969c0545f0b6a76873e328b7c # v5.0.0
+        id: jfrog
+        env:
+          JF_URL: ${{ vars.JF_URL }} # This variable is configured org wide
+        with:
+          oidc-provider-name: github
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.1.0 # TODO: upgrade to v5+ when pnpm/action-setup#234 is fixed (v6 requires npm on PATH)
+
+      - name: Use Node.js from .nvmrc
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: ".nvmrc"
+          cache: pnpm
+
+      - name: Install Dependencies
+        env:
+          ARTIFACTORY_TOKEN: ${{ steps.jfrog.outputs.oidc-token }} # Use the token
+          NPM_CONFIG_USERCONFIG: ${{ github.workspace }}/.npmrc.gha
+        run: pnpm install --prefer-offline
+
+      - name: Get Artifactory Write Token for Publishing
+        uses: jfrog/setup-jfrog-cli@1641575d87647fb969c0545f0b6a76873e328b7c # v5.0.0
+        id: jfrog-publish
+        env:
+          JF_URL: ${{ vars.JF_URL }}
+        with:
+          oidc-provider-name: github-write # Use github-write for write operations
+
+      - name: Publish to NPM
+        id: publish
+        run: |
+          set -e
+          pnpm run release 2>&1 | tee publish_output.txt || {
+            echo "Publish failed. Output:"
+            cat publish_output.txt
+            exit 1
+          }
+          git push --follow-tags
+          echo "PUBLISH_OUTPUT<<EOF" >> $GITHUB_ENV
+          cat publish_output.txt >> $GITHUB_ENV
+          echo "EOF" >> $GITHUB_ENV
+          cat publish_output.txt
+        env:
+          ARTIFACTORY_TOKEN: ${{ steps.jfrog-publish.outputs.oidc-token }} # Use the token
+          NPM_CONFIG_USERCONFIG: ${{ github.workspace }}/.npmrc.gha # Use the .gha version for auth
+          JF_URL: ${{ vars.JF_URL }}
+
+      - name: Send Slack Message
+        if: success()
+        run: |
+          node -e '
+            const fs = require("fs");
+            const file = fs.readFileSync("./publish_output.txt", "utf8");
+            const lines = file.split("\n");
+            const startIndex = lines.findIndex(line => line.includes("packages published successfully:"));
+            const endIndex = lines.findIndex(line => line.includes("Creating git tag"));
+
+            if (startIndex === -1 || endIndex === -1) {
+              console.log("No packages were published in this run. Skipping Slack notification.");
+              process.exit(0);
+            }
+
+            const publishLines = lines.slice(startIndex + 1, endIndex);
+            const text = publishLines.join("\n").replace(/🦋\s*/g, "").replace(/^\s+/gm, "").trim();
+
+            const runUrl = process.env.GITHUB_SERVER_URL + "/" +
+              process.env.GITHUB_REPOSITORY + "/actions/runs/" +
+              process.env.GITHUB_RUN_ID;
+
+            const message = `✅ Gasket Packages Published Successfully ✅\n\n Run: ${runUrl}\n\n📦 Published Packages:\n\`\`\`${text}\`\`\``;
+            const jsonPayload = JSON.stringify({ text: message });
+            console.log(jsonPayload);
+
+            fs.writeFileSync("./slack_payload.json", JSON.stringify({ text: message }, null, 2));
+          '
+
+          if [ -f "./slack_payload.json" ]; then
+            curl -X POST -H 'Content-type: application/json' --data @slack_payload.json "${{ secrets.SLACK_WEBHOOK_URL }}"
+            curl -X POST -H 'Content-type: application/json' --data @slack_payload.json "${{ secrets.SLACK_WEBHOOK_URL_DEV }}"
+          fi
+
+  UploadCoverageToSPAQ:
+    name: Upload Coverage to SPAQ
+    needs: publish
+    runs-on:
+      group: 6716-pfxrunners
+      labels: self-hosted
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+        with:
+          ref: refs/heads/${{ github.event_name == 'repository_dispatch' && github.event.client_payload.branch || github.ref_name }}
+
+      - name: Get Artifactory Read-Only Token
+        uses: jfrog/setup-jfrog-cli@1641575d87647fb969c0545f0b6a76873e328b7c # v5.0.0
+        id: jfrog
+        env:
+          JF_URL: ${{ vars.JF_URL }}
+        with:
+          oidc-provider-name: github
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.1.0 # TODO: upgrade to v5+ when pnpm/action-setup#234 is fixed (v6 requires npm on PATH)
+
+      - name: Use Node.js from .nvmrc
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install Dependencies
+        run: pnpm install --prefer-offline
+        env:
+          ARTIFACTORY_TOKEN: ${{ steps.jfrog.outputs.oidc-token }}
+          NPM_CONFIG_USERCONFIG: ${{ github.workspace }}/.npmrc.gha
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Run Tests with Coverage
+        run: pnpm run test:coverage
+        continue-on-error: true
+        env:
+          CERT_API_TOKEN: mock-token
+
+      - name: Assume Deploy Role
+        uses: aws-actions/configure-aws-credentials@8df5847569e6427dd6c4fb1cf565c83acfa8afa7 # v6.0.0
+        with:
+          role-to-assume: arn:aws:iam::041281124613:role/GD-AWS-USA-CTO-configstor-Dev-Private-Deploy
+          role-duration-seconds: 900
+          role-skip-session-tagging: true
+          role-chaining: true
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Upload Coverage
+        uses: gdcorp-actions/spaq-actions@04ffe56274ea4b8a1cc90f421bd5fbc5c1e1caa1 #v3
+        with:
+          coveragePath: coverage/lcov.info

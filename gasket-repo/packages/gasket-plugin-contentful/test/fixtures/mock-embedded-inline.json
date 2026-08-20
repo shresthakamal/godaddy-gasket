@@ -1,0 +1,61 @@
+{
+  "nodeType": "paragraph",
+  "data": {},
+  "content": [
+    {
+      "nodeType": "text",
+      "value": "Demo token: ",
+      "marks": [],
+      "data": {}
+    },
+    {
+      "nodeType": "embedded-entry-inline",
+      "data": {
+        "target": {
+          "metadata": {
+            "tags": []
+          },
+          "sys": {
+            "space": {
+              "sys": {
+                "type": "Link",
+                "linkType": "Space",
+                "id": "rf908d9srlth"
+              }
+            },
+            "id": "2tHpmUp9yK4QVBh6cX2l34",
+            "type": "Entry",
+            "createdAt": "2023-02-08T18:49:19.802Z",
+            "updatedAt": "2023-02-08T18:49:19.802Z",
+            "environment": {
+              "sys": {
+                "id": "master",
+                "type": "Link",
+                "linkType": "Environment"
+              }
+            },
+            "revision": 1,
+            "contentType": {
+              "sys": {
+                "type": "Link",
+                "linkType": "ContentType",
+                "id": "embeddedToken"
+              }
+            },
+            "locale": "en-US"
+          },
+          "fields": {
+            "title": "some:token"
+          }
+        }
+      },
+      "content": []
+    },
+    {
+      "nodeType": "text",
+      "value": "",
+      "marks": [],
+      "data": {}
+    }
+  ]
+}

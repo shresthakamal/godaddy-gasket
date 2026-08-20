@@ -1,0 +1,36 @@
+name: Internal Gasket Template Testing
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "0 7 * * 1-5" # 7 AM UTC -> 12 AM PST, 3 AM EST
+
+jobs:
+  run-gasket-app-testing:
+    uses: ./.github/workflows/_shared-gasket-testing.yaml
+    with:
+      app_matrix: >-
+        [
+          "template-webapp-app",
+          "template-webapp-pages",
+          "template-webapp-express",
+          "template-api-express",
+          "template-api-fastify",
+          "template-hcs"
+        ]
+      env_vars: |
+        GASKET_CI=1
+        RUN_BUILD=1
+        RUN_START=1
+        RUN_LOCAL=1
+        RUN_TEST=1
+        RUN_DOCS=1
+        EXIT_ON_ERROR=1
+        # VERBOSE=1
+        # OS_PREID=canary
+        # INTERNAL_PREID=canary
+      test_command: 'pnpm'
+      workflow_name: 'internal-template-testing'
+      gasket_scope: 'Internal'
+    secrets:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

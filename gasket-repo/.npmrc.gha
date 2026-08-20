@@ -1,0 +1,12 @@
+# NPM configuration for CI/CD pipelines
+# Credentials are provided via environment variable ARTIFACTORY_TOKEN
+# https://docs.npmjs.com/cli/v9/configuring-npm/npmrc
+
+always-auth = true
+
+# Virtual registry for downloading packages
+registry=https://gdartifactory1.jfrog.io/artifactory/api/npm/node-virt/
+//gdartifactory1.jfrog.io/artifactory/api/npm/node-virt/:_authToken=${ARTIFACTORY_TOKEN}
+
+# Local repository for publishing
+//gdartifactory1.jfrog.io/artifactory/api/npm/npm-gasket-core-local/:_authToken=${ARTIFACTORY_TOKEN}

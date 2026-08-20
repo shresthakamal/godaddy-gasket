@@ -1,0 +1,7 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`worker > should render AnotherLibraryExport correctly 1`] = `"<div>hello library export</div>"`;
+
+exports[`worker > should render Footer with the props correctly 1`] = `"<div>This is a title</div>"`;
+
+exports[`worker > should render Header correctly 1`] = `"<div>hello world</div>"`;

@@ -1,0 +1,133 @@
+{
+  "name": "@godaddy/gasket",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Internal Gasket plugins and packages",
+  "type": "module",
+  "files": [
+    "docs"
+  ],
+  "scripts": {
+    "align-packages": "node ./scripts/align-packages",
+    "build": "pnpm run -r build",
+    "changeset": "changeset",
+    "clean": "pnpm run clean:packages && pnpm run clean:root",
+    "clean:packages": "pnpm -r exec rimraf dist node_modules",
+    "clean:root": "rimraf node_modules",
+    "docs": "pnpm run -r docs && pnpm run generate-docs-index",
+    "docs-view": "pnpm run generate-docs-index && cd site && docusaurus start",
+    "generate-docs-index": "node scripts/generate-docs-index",
+    "lint": "eslint scripts && eslint tools/gasket-testing-tool",
+    "lint:all": "pnpm run lint && pnpm run -r lint",
+    "lint:fix": "pnpm run lint --fix",
+    "lint:fix:all": "pnpm run lint:fix && pnpm run -r lint:fix",
+    "postinstall": "pnpm run build",
+    "postpublish": "node scripts/mark-deprecated.js",
+    "posttest": "pnpm run lint",
+    "preinstall": "npx only-allow pnpm",
+    "publish": "pnpm changeset publish",
+    "publish:canary": "pnpm changeset version --snapshot canary && pnpm changeset publish --tag canary",
+    "publish:next": "pnpm changeset version --pre next && pnpm changeset publish --tag next --force-publish --exact",
+    "release": "changeset publish",
+    "replace-ws-aliases": "node scripts/replace-ws-aliases.js",
+    "syncpack": "syncpack",
+    "syncpack:fix": "syncpack fix-mismatches && syncpack format",
+    "templates:regen:lockfiles": "node scripts/npm.js regen",
+    "templates:validate": "node scripts/npm.js clean && node scripts/npm.js npm-ci && node scripts/npm.js build && node scripts/npm.js lint && node scripts/npm.js test",
+    "templates:validate-dotfiles": "node scripts/templates-validate-dotfiles.js",
+    "test": "pnpm run -r test",
+    "test:coverage": "vitest run --coverage",
+    "test:package": "pnpm run -r --filter $* test",
+    "typecheck:all": "pnpm run -r typecheck",
+    "version": "changeset version && pnpm install --prefer-offline"
+  },
+  "repository": "gdcorp-uxp/gasket.git",
+  "publishConfig": {
+    "registry": "https://gdartifactory1.jfrog.io/artifactory/api/npm/npm-gasket-core-local/"
+  },
+  "keywords": [
+    "framework",
+    "gasket",
+    "oclif",
+    "plugins",
+    "pwa",
+    "ssr"
+  ],
+  "author": "GoDaddy Operating Company, LLC",
+  "license": "UNLICENSED",
+  "bugs": "https://github.com/gdcorp-uxp/gasket/issues",
+  "homepage": "https://github.com/gdcorp-uxp/gasket",
+  "devDependencies": {
+    "@changesets/cli": "^2.29.5",
+    "@docusaurus/core": "^3.8.1",
+    "@docusaurus/preset-classic": "^3.8.1",
+    "@easyops-cn/docusaurus-search-local": "^0.52.1",
+    "@typescript-eslint/eslint-plugin": "^8.38.0",
+    "@typescript-eslint/parser": "^8.38.0",
+    "@vitest/coverage-v8": "^3.2.0",
+    "@vitest/eslint-plugin": "^1.1.44",
+    "chalk": "^4.1.2",
+    "create-gasket-app": "^7.4.19",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.31.0",
+    "eslint-config-godaddy-react-typescript": "^5.0.0",
+    "eslint-config-godaddy-typescript": "^5.0.0",
+    "eslint-plugin-jest": "^29.0.0",
+    "eslint-plugin-jsdoc": "^50.6.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-unicorn": "^59.0.1",
+    "globby": "^11.1.0",
+    "js-yaml": "^4.1.0",
+    "jsdom": "^25.0.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "rimraf": "^3.0.2",
+    "syncpack": "^13.0.3",
+    "vitest": "^3.2.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "godaddy"
+    ],
+    "plugins": [
+      "unicorn"
+    ],
+    "rules": {
+      "unicorn/filename-case": "error"
+    }
+  },
+  "engines": {
+    "pnpm": ">=8",
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm",
+    "node": ">=20"
+  },
+  "overrides": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "addhoc": "^2.0.0"
+  },
+  "packageManager": "pnpm@10.13.1",
+  "pnpm": {
+    "peerDependencyRules": {
+      "allowAny": [
+        "react",
+        "react-dom",
+        "react-intl",
+        "eslint"
+      ],
+      "allowedVersions": {
+        "vitest": ">=3.2.0 <3.3.0",
+        "next": "~16.1.6",
+        "@types/react": "^19.0.0",
+        "@types/react-dom": "^19.0.0"
+      }
+    }
+  },
+  "workspaces": [
+    "packages/*",
+    "scripts/generate-docs-index",
+    "tools/gasket-testing-tool"
+  ]
+}

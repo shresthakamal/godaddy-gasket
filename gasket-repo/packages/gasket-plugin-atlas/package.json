@@ -1,0 +1,63 @@
+{
+  "name": "@godaddy/gasket-plugin-atlas",
+  "version": "3.2.0",
+  "description": "Plugin for using Atlas in Gasket apps",
+  "type": "module",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib",
+    "cjs",
+    "EXAMPLES.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.js",
+      "require": "./cjs/index.cjs",
+      "default": "./cjs/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "gasket-cjs ./lib",
+    "build:watch": "pnpm run build --watch",
+    "lint": "eslint .",
+    "lint:fix": "pnpm run lint --fix",
+    "posttest": "pnpm run lint && pnpm run typecheck",
+    "prepublishOnly": "pnpm run build",
+    "test": "vitest run --globals",
+    "test:coverage": "pnpm run test --coverage",
+    "test:watch": "vitest --watch --globals",
+    "typecheck": "tsc",
+    "typecheck:watch": "pnpm run typecheck --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gdcorp-uxp/gasket.git",
+    "directory": "packages/gasket-plugin-atlas"
+  },
+  "publishConfig": {
+    "registry": "https://gdartifactory1.jfrog.io/artifactory/api/npm/npm-gasket-core-local/"
+  },
+  "keywords": [
+    "atlas",
+    "gasket",
+    "plugin"
+  ],
+  "author": "GoDaddy Operating Company, LLC",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/gdcorp-uxp/gasket/tree/main/packages/gasket-plugin-atlas",
+  "dependencies": {
+    "@godaddy/atlas": "^1.2.1"
+  },
+  "devDependencies": {
+    "@gasket/cjs": "^7.0.2",
+    "@gasket/core": "^7.7.3",
+    "@gasket/plugin-https": "^7.3.8",
+    "@types/node": "^22.18.6",
+    "create-gasket-app": "^7.4.19",
+    "cross-env": "^7.0.3",
+    "typescript": "^5.8.2",
+    "vitest": "^3.2.0"
+  }
+}

@@ -1,0 +1,208 @@
+name: Optimized Shared Gasket Testing Workflow
+
+on:
+  workflow_call:
+    inputs:
+      app_matrix:
+        description: 'JSON array of app types to test'
+        required: true
+        type: string
+      env_vars:
+        description: 'Environment variables for .env file'
+        required: true
+        type: string
+      test_command:
+        description: 'Command to run the test (npm or pnpm)'
+        required: false
+        type: string
+        default: 'pnpm'
+      workflow_name:
+        description: 'Name of the calling workflow for concurrency'
+        required: true
+        type: string
+      gasket_scope:
+        description: 'Gasket scope for Slack notifications (OS or Internal)'
+        required: true
+        type: string
+    secrets:
+      SLACK_WEBHOOK_URL:
+        required: true
+
+env:
+  AWS_REGION: us-west-2
+
+permissions:
+  id-token: write
+  contents: write
+  actions: read
+  pull-requests: read
+
+concurrency:
+  group: ${{ inputs.workflow_name }}-${{ github.ref }}-${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on:
+      group: 6216-uxpci0
+      labels: self-hosted
+
+    outputs:
+      cache-key: ${{ steps.cache-key.outputs.key }}
+
+    env:
+      NPM_CONFIG_USERCONFIG: ${{ github.workspace }}/.npmrc.gha
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Get Artifactory Read-Only Token
+        uses: jfrog/setup-jfrog-cli@1641575d87647fb969c0545f0b6a76873e328b7c # v5.0.0
+        id: jfrog
+        env:
+          JF_URL: ${{ vars.JF_URL }}
+        with:
+          oidc-provider-name: github
+
+      - name: Export ARTIFACTORY_AUTH_TOKEN
+        run: echo "ARTIFACTORY_AUTH_TOKEN=${{ steps.jfrog.outputs.oidc-token }}" >> $GITHUB_ENV
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.1.0 # TODO: upgrade to v5+ when pnpm/action-setup#234 is fixed (v6 requires npm on PATH)
+        env:
+          NPM_CONFIG_USERCONFIG: ''
+
+      - name: Use Node.js from .nvmrc
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: pnpm
+
+      - name: Generate cache key for build artifacts
+        id: cache-key
+        run: |
+          echo "key=gasket-build-${{ hashFiles('pnpm-lock.yaml', 'package.json', 'packages/*/package.json') }}-${{ github.sha }}" >> $GITHUB_OUTPUT
+
+      - name: Cache build artifacts
+        uses: actions/cache@v5
+        with:
+          path: |
+            node_modules
+            packages/*/node_modules
+            packages/*/lib
+            packages/*/cjs
+            packages/*/dist
+            tools/gasket-testing-tool/node_modules
+          key: ${{ steps.cache-key.outputs.key }}
+
+      - name: Configure npm authentication
+        run: |
+          echo "registry=https://gdartifactory1.jfrog.io/artifactory/api/npm/node-virt/" > .npmrc.gha
+          echo "//gdartifactory1.jfrog.io/artifactory/api/npm/node-virt/:_authToken=${ARTIFACTORY_AUTH_TOKEN}" >> .npmrc.gha
+
+      - name: Install dependencies
+        run: pnpm install --prefer-offline --frozen-lockfile
+
+      - name: Replace Workspace Aliases
+        run: pnpm run replace-ws-aliases
+
+      - name: Build
+        run: pnpm run build
+
+  test:
+    needs: build
+    runs-on:
+      group: 6216-uxpci0
+      labels: self-hosted
+
+    env:
+      NPM_CONFIG_USERCONFIG: ${{ github.workspace }}/.npmrc.gha
+      GH_TOKEN: ${{ github.token }}
+
+    strategy:
+      fail-fast: false  # Don't cancel other jobs if one fails
+      max-parallel: 4   # Run up to 4 tests in parallel
+      matrix:
+        app: ${{ fromJson(inputs.app_matrix) }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Get Artifactory Read-Only Token
+        uses: jfrog/setup-jfrog-cli@1641575d87647fb969c0545f0b6a76873e328b7c # v5.0.0
+        id: jfrog
+        env:
+          JF_URL: ${{ vars.JF_URL }}
+        with:
+          oidc-provider-name: github
+
+      - name: Export ARTIFACTORY_AUTH_TOKEN
+        run: echo "ARTIFACTORY_AUTH_TOKEN=${{ steps.jfrog.outputs.oidc-token }}" >> $GITHUB_ENV
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.1.0 # TODO: upgrade to v5+ when pnpm/action-setup#234 is fixed (v6 requires npm on PATH)
+        env:
+          NPM_CONFIG_USERCONFIG: ''
+
+      - name: Use Node.js from .nvmrc
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+          cache: pnpm
+
+      - name: Restore build artifacts
+        uses: actions/cache/restore@v5
+        with:
+          path: |
+            node_modules
+            packages/*/node_modules
+            packages/*/lib
+            packages/*/cjs
+            packages/*/dist
+            tools/gasket-testing-tool/node_modules
+          key: ${{ needs.build.outputs.cache-key }}
+          fail-on-cache-miss: true
+
+      - name: Configure npm authentication
+        run: |
+          echo "registry=https://gdartifactory1.jfrog.io/artifactory/api/npm/node-virt/" > .npmrc.gha
+          echo "//gdartifactory1.jfrog.io/artifactory/api/npm/node-virt/:_authToken=${ARTIFACTORY_AUTH_TOKEN}" >> .npmrc.gha
+
+      - name: Create .env file in gasket-testing-tool
+        run: |
+          cat > tools/gasket-testing-tool/.env <<EOT
+          ${{ inputs.env_vars }}
+          EOT
+
+      - name: Run test for ${{ matrix.app }}
+        working-directory: ./tools/gasket-testing-tool
+        run: |
+          echo "Running tests for: ${{ matrix.app }}"
+          ${{ inputs.test_command }} run create-app "${{ matrix.app }}"
+
+  notify:
+    needs: test
+    if: failure() && !cancelled()
+    runs-on:
+      group: 6216-uxpci0
+      labels: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Use Node.js from .nvmrc
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Send Slack Notification on Failure
+        run: |
+          export WORKFLOW_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          export SLACK_WEBHOOK_URL="${{ secrets.SLACK_WEBHOOK_URL }}"
+          export GH_TOKEN="${{ github.token }}"
+          export GH_REPO="${{ github.repository }}"
+          export GASKET_SCOPE="${{ inputs.gasket_scope }}"
+          node .github/workflows/notify-slack.js

@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "tags": []
+  },
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "jyd4kk9ub1b9"
+      }
+    },
+    "id": "ch2ZHfR6psYh9d8VXqNCF",
+    "type": "Asset",
+    "createdAt": "2023-05-04T21:30:56.741Z",
+    "updatedAt": "2023-05-04T21:30:56.741Z",
+    "environment": {
+      "sys": {
+        "id": "master",
+        "type": "Link",
+        "linkType": "Environment"
+      }
+    },
+    "revision": 1,
+    "locale": "en-US"
+  },
+  "fields": {
+    "title": "Domain Backorder NextGen Migration - ICT-1968",
+    "description": "Domain Backorder NextGen Migration - ICT-1968",
+    "file": {
+      "url": "//images.ctfassets.net/path/to/image.svg",
+      "details": {
+        "size": 24903,
+        "image": {
+          "width": 234,
+          "height": 233
+        }
+      },
+      "fileName": "Domain Backorder NextGen Migration - ICT-1968.svg",
+      "contentType": "image/svg+xml"
+    }
+  }
+}

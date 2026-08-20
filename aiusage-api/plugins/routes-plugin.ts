@@ -1,0 +1,29 @@
+export const defaultHandler = async (req, res) => {
+  console.log(process.env.GD_ENV);
+  res.status(200).json({
+    message: 'Welcome to your default route...'
+  });
+};
+
+export default {
+  name: 'routes-plugin',
+  hooks: {
+    express(gasket, app) {
+      /**
+      * @swagger
+      *
+      * /default:
+      *   get:
+      *     summary: "Get default route"
+      *     produces:
+      *       - "application/json"
+      *     responses:
+      *       "200":
+      *         description: "Returns welcome message."
+      *         content:
+      *           application/json
+      */
+      app.get('/default', defaultHandler);
+    }
+  }
+};

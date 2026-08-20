@@ -1,0 +1,31 @@
+{
+  "name": "@godaddy/gasket-template-webapp-app",
+  "version": "3.1.6",
+  "description": "Gasket template for App Router webapp with TypeScript",
+  "type": "module",
+  "files": [
+    "template"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "pnpm run lint --fix",
+    "posttest": "pnpm run lint",
+    "test": "vitest run --globals",
+    "test:coverage": "pnpm run test --coverage",
+    "test:watch": "vitest --watch --globals"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gdcorp-uxp/gasket.git",
+    "directory": "packages/gasket-template-webapp-app"
+  },
+  "publishConfig": {
+    "registry": "https://gdartifactory1.jfrog.io/artifactory/api/npm/npm-gasket-core-local/"
+  },
+  "author": "GoDaddy Operating Company, LLC",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/gdcorp-uxp/gasket/tree/main/packages/gasket-template-webapp-app",
+  "devDependencies": {
+    "vitest": "^3.2.0"
+  }
+}

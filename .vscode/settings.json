@@ -1,0 +1,22 @@
+{
+    "workbench.colorCustomizations": {
+        "minimap.background": "#00000000",
+        "scrollbar.shadow": "#00000000"
+    },
+    "editor.cursorSmoothCaretAnimation": "off",
+    "editor.cursorStyle":"line",
+    "editor.cursorWidth": 5,
+    "explorer.sortOrder": "modified",
+    "editor.tokenColorCustomizations": {
+        "comments": "#ababab",
+        "functions": "#177f1c",
+    },
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+        "rules": {
+            "function": {
+                "bold": true,
+            },
+        }
+    }
+}

@@ -1,0 +1,99 @@
+{
+  "name": "@godaddy/gasket-content-components",
+  "version": "3.2.4",
+  "description": "Gasket package for retrieving and handling CMS content",
+  "type": "module",
+  "types": "lib/index.d.ts",
+  "files": [
+    "src",
+    "lib",
+    "cjs"
+  ],
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.js",
+      "require": "./cjs/index.cjs",
+      "default": "./cjs/index.cjs"
+    },
+    "./to-flattened-content": {
+      "types": "./lib/to-flattened-content.d.ts",
+      "import": "./lib/to-flattened-content.js",
+      "require": "./cjs/to-flattened-content.cjs",
+      "default": "./cjs/to-flattened-content.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsc --build && gasket-cjs ./lib",
+    "build:watch": "tsc --build --watch",
+    "clean": "rimraf lib cjs",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "posttest": "npm run test:types && npm run lint",
+    "prepublishOnly": "pnpm run build",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:types": "tsc --noEmit",
+    "test:watch": "vitest"
+  },
+  "repository": "gdcorp-uxp/pfx-storefront.git",
+  "publishConfig": {
+    "registry": "https://gdartifactory1.jfrog.io/artifactory/api/npm/npm-gasket-core-local/"
+  },
+  "keywords": [
+    "cms",
+    "content",
+    "gasket",
+    "plugin"
+  ],
+  "author": "GoDaddy Operating Company, LLC",
+  "maintainers": [
+    "Bree Betts <bbetts@godaddy.com>"
+  ],
+  "license": "UNLICENSED",
+  "bugs": "https://github.com/gdcorp-uxp/pfx-storefront/issues",
+  "homepage": "https://github.com/gdcorp-uxp/pfx-storefronttree/main/packages/gasket-content-components",
+  "devDependencies": {
+    "@gasket/cjs": "^7.0.2",
+    "@gasket/core": "^7.7.3",
+    "@gasket/plugin-logger": "^7.3.5",
+    "@godaddy/gasket-content-nodes": "workspace:^",
+    "@godaddy/gasket-plugin-content": "workspace:^",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.2.0",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitest/eslint-plugin": "^1.1.44",
+    "hoist-non-react-statics": "^3.3.2",
+    "jsdom": "^25.0.1",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "typescript": "^5.8.2",
+    "vitest": "^3.2.0"
+  },
+  "peerDependencies": {
+    "react": "^18.3.1 || ^19.2.4",
+    "react-dom": "^18.3.1 || ^19.2.4"
+  },
+  "eslintConfig": {
+    "extends": [
+      "godaddy-typescript"
+    ],
+    "plugins": [
+      "unicorn",
+      "@vitest"
+    ],
+    "rules": {
+      "unicorn/filename-case": "error"
+    },
+    "env": {
+      "@vitest/env": true
+    }
+  },
+  "eslintIgnore": [
+    "lib"
+  ],
+  "module": "lib/index.js"
+}

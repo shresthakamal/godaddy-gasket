@@ -1,0 +1,475 @@
+{
+  "metadata": {
+    "tags": [
+      {
+        "sys": {
+          "type": "Link",
+          "linkType": "Tag",
+          "id": "page"
+        }
+      }
+    ]
+  },
+  "sys": {
+    "space": {
+      "sys": {
+        "type": "Link",
+        "linkType": "Space",
+        "id": "rf908d9srlth"
+      }
+    },
+    "id": "6m1OtVPcd0fllxfdfszUZA",
+    "type": "Entry",
+    "createdAt": "2022-10-25T18:23:33.837Z",
+    "updatedAt": "2022-12-22T23:34:45.640Z",
+    "environment": {
+      "sys": {
+        "id": "master",
+        "type": "Link",
+        "linkType": "Environment"
+      }
+    },
+    "revision": 8,
+    "contentType": {
+      "sys": {
+        "type": "Link",
+        "linkType": "ContentType",
+        "id": "pageFreeform"
+      }
+    },
+    "locale": "en-US"
+  },
+  "fields": {
+    "title": "Domain Names",
+    "slug": "/domain-names",
+    "sections": [
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "rf908d9srlth"
+            }
+          },
+          "id": "4iCWXSlGWnACCmz8XSUDWW",
+          "type": "Entry",
+          "createdAt": "2022-10-26T18:34:37.003Z",
+          "updatedAt": "2023-02-08T18:50:36.077Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 37,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "billboard"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": {
+          "entryTitle": "Billboard - Secondary Colorway - Find an awesome web address for your business",
+          "title": {
+            "data": {},
+            "content": [
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "Find an awesome web address for your business",
+                    "nodeType": "text"
+                  }
+                ],
+                "nodeType": "heading-2"
+              },
+              {
+                "data": {},
+                "content": [
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "",
+                    "nodeType": "text"
+                  },
+                  {
+                    "data": {},
+                    "marks": [],
+                    "value": "",
+                    "nodeType": "fake",
+                    "comment": "MISSING RICH TEXT TYPE"
+                  }
+                ],
+                "nodeType": "paragraph"
+              }
+            ],
+            "nodeType": "document"
+          },
+          "colorway": "secondary",
+          "content": {
+            "nodeType": "document",
+            "data": {},
+            "content": [
+              {
+                "nodeType": "paragraph",
+                "data": {},
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "See how easily you could find an incredible extension fit for a global brand, just like Cauli Rice did using 123 Reg, the UK’s #1 domain provider.",
+                    "marks": [],
+                    "data": {}
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {},
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Testing paragraph with ",
+                    "marks": [],
+                    "data": {}
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "bold",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      }
+                    ],
+                    "data": {}
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": ", ",
+                    "marks": [],
+                    "data": {}
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "italics",
+                    "marks": [
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "data": {}
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": ", and ",
+                    "marks": [],
+                    "data": {}
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "both",
+                    "marks": [
+                      {
+                        "type": "bold"
+                      },
+                      {
+                        "type": "italic"
+                      }
+                    ],
+                    "data": {}
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": ". Also, ",
+                    "marks": [],
+                    "data": {}
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "inline code",
+                    "marks": [
+                      {
+                        "type": "code"
+                      }
+                    ],
+                    "data": {}
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": " and ",
+                    "marks": [],
+                    "data": {}
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "underline",
+                    "marks": [
+                      {
+                        "type": "underline"
+                      }
+                    ],
+                    "data": {}
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": " here.",
+                    "marks": [],
+                    "data": {}
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {},
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Demo token: ",
+                    "marks": [],
+                    "data": {}
+                  },
+                  {
+                    "nodeType": "embedded-entry-inline",
+                    "data": {
+                      "target": {
+                        "metadata": {
+                          "tags": []
+                        },
+                        "sys": {
+                          "space": {
+                            "sys": {
+                              "type": "Link",
+                              "linkType": "Space",
+                              "id": "rf908d9srlth"
+                            }
+                          },
+                          "id": "2tHpmUp9yK4QVBh6cX2l34",
+                          "type": "Entry",
+                          "createdAt": "2023-02-08T18:49:19.802Z",
+                          "updatedAt": "2023-02-08T18:49:19.802Z",
+                          "environment": {
+                            "sys": {
+                              "id": "master",
+                              "type": "Link",
+                              "linkType": "Environment"
+                            }
+                          },
+                          "revision": 1,
+                          "contentType": {
+                            "sys": {
+                              "type": "Link",
+                              "linkType": "ContentType",
+                              "id": "token"
+                            }
+                          },
+                          "locale": "en-US"
+                        },
+                        "fields": {
+                          "title": "Price: Total Price:barfoo:10:MONTH",
+                          "content": "<span>{{package[barfoo].prices[10:MONTH].salePrice}}</span>",
+                          "bold": false,
+                          "italic": false
+                        }
+                      }
+                    },
+                    "content": []
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "",
+                    "marks": [],
+                    "data": {}
+                  }
+                ]
+              },
+              {
+                "nodeType": "paragraph",
+                "data": {},
+                "content": [
+                  {
+                    "nodeType": "text",
+                    "value": "Merch Storefront Token: ",
+                    "marks": [],
+                    "data": {}
+                  },
+                  {
+                    "nodeType": "embedded-entry-inline",
+                    "data": {
+                      "target": {
+                        "metadata": {
+                          "tags": []
+                        },
+                        "sys": {
+                          "space": {
+                            "sys": {
+                              "type": "Link",
+                              "linkType": "Space",
+                              "id": "rf908d9srlth"
+                            }
+                          },
+                          "id": "1THIx0EZSdDnuHh9VFvVVK",
+                          "type": "Entry",
+                          "createdAt": "2023-02-08T18:50:32.766Z",
+                          "updatedAt": "2023-02-08T18:51:18.065Z",
+                          "environment": {
+                            "sys": {
+                              "id": "master",
+                              "type": "Link",
+                              "linkType": "Environment"
+                            }
+                          },
+                          "revision": 2,
+                          "contentType": {
+                            "sys": {
+                              "type": "Link",
+                              "linkType": "ContentType",
+                              "id": "token"
+                            }
+                          },
+                          "locale": "en-US"
+                        },
+                        "fields": {
+                          "title": "tld:com:listPrice",
+                          "content": "{{tld:com:listPrice}}",
+                          "bold": true,
+                          "italic": true
+                        }
+                      }
+                    },
+                    "content": []
+                  },
+                  {
+                    "nodeType": "text",
+                    "value": "",
+                    "marks": [],
+                    "data": {}
+                  }
+                ]
+              }
+            ]
+          },
+          "contentPosition": "top",
+          "gradient": true,
+          "imagePosition": "right",
+          "image": {
+            "alt": "alt",
+            "url": "https://img1.wsimg.com/cdn/Image/All/FOS-Intl/1/en-GB/7fe9cc11-83f1-4c3f-9499-f4e6ce8d6e8d/Domainnames_image2_2000x700.jpg"
+          },
+          "cta": {
+            "url": "https://www.123-reg.co.uk/domain-names/",
+            "label": "Watch the video"
+          },
+          "domainSearch": {
+            "metadata": {
+              "tags": []
+            },
+            "sys": {
+              "space": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "Space",
+                  "id": "rf908d9srlth"
+                }
+              },
+              "id": "3VQ6ANd1SSBprIV1sHuPnY",
+              "type": "Entry",
+              "createdAt": "2022-10-26T18:31:07.136Z",
+              "updatedAt": "2022-10-28T17:39:37.478Z",
+              "environment": {
+                "sys": {
+                  "id": "master",
+                  "type": "Link",
+                  "linkType": "Environment"
+                }
+              },
+              "revision": 2,
+              "contentType": {
+                "sys": {
+                  "type": "Link",
+                  "linkType": "ContentType",
+                  "id": "domainSearch"
+                }
+              },
+              "locale": "en-US"
+            },
+            "fields": {
+              "entryTitle": "Billboard - Domain Search",
+              "ariaLabels": {
+                "searchLabel": "label",
+                "searchButton": "label"
+              },
+              "autoCapitalize": false,
+              "autoCompleteMode": "query",
+              "autoCorrect": false,
+              "button": false,
+              "icon": true,
+              "maxResults": 10,
+              "placeholder": "My Placeholder",
+              "spellCheck": false,
+              "overlayEnabled": false
+            }
+          }
+        }
+      },
+      {
+        "metadata": {
+          "tags": []
+        },
+        "sys": {
+          "space": {
+            "sys": {
+              "type": "Link",
+              "linkType": "Space",
+              "id": "rf908d9srlth"
+            }
+          },
+          "id": "4iCWXSlGWnACCmz8XSUDWW",
+          "type": "Entry",
+          "createdAt": "2022-10-26T18:34:37.003Z",
+          "updatedAt": "2023-02-08T18:50:36.077Z",
+          "environment": {
+            "sys": {
+              "id": "master",
+              "type": "Link",
+              "linkType": "Environment"
+            }
+          },
+          "revision": 37,
+          "contentType": {
+            "sys": {
+              "type": "Link",
+              "linkType": "ContentType",
+              "id": "billboard"
+            }
+          },
+          "locale": "en-US"
+        },
+        "fields": null
+      },
+      {
+        "sys": {
+          "comment": "MISSING CONTENT ENTRY EXAMPLE",
+          "type": "Link",
+          "linkType": "Entry",
+          "id": "1bu8u8pe7LaOqgdw9hADk5"
+        }
+      },
+      {
+        "sys": {
+          "type": "ResourceLink",
+          "linkType": "Contentful:Entry",
+          "urn": "crn:contentful:::content:spaces/z2t39effv040/environments/master/entries/1YKgOlzr2FvTN5Mdlorrgv"
+        }
+      }
+    ]
+  }
+}

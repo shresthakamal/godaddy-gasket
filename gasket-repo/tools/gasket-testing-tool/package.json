@@ -1,0 +1,46 @@
+{
+  "name": "gasket-testing-tool",
+  "private": true,
+  "version": "2.0.2",
+  "description": "A comprehensive testing utility for validating create-gasket-app CLI functionality with presets and templates.",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "build:only": "node src/index.js build_only",
+    "cicd": "node src/index.js all",
+    "clean:apps": "rm -rf __apps__",
+    "clean:files": "bash ./scripts/clean-files.sh",
+    "clean:next": "bash ./scripts/clean-next-dirs.sh",
+    "create-app": "node src/index.js $npm_config_appType",
+    "render": "node src/index.js render_only",
+    "report": "node src/index.js print_reports",
+    "report:failures": "node src/index.js report_failures",
+    "report:html": "node src/index.js report_html",
+    "report:json": "node src/index.js report_json",
+    "run:all": "node src/index.js all",
+    "run:all-presets": "node src/index.js all-presets",
+    "run:all-templates": "node src/index.js all-templates",
+    "run:internal-presets": "node src/index.js all-internal",
+    "run:internal-templates": "node src/index.js all-internal-templates",
+    "run:os-presets": "node src/index.js all-os",
+    "run:os-templates": "node src/index.js all-os-templates",
+    "start": "node src/index.js",
+    "test:only": "node src/index.js test_only"
+  },
+  "repository": "gdcorp-uxp/gasket.git",
+  "publishConfig": {
+    "registry": "https://gdartifactory1.jfrog.io/artifactory/api/npm/npm-gasket-core-local/"
+  },
+  "author": "GoDaddy Operating Company, LLC",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/gdcorp-uxp/gasket/tree/main/tools/gasket-testing-tool",
+  "dependencies": {
+    "cli-table3": "^0.6.3",
+    "create-gasket-app": "^7.4.19",
+    "dotenv": "^16.4.7",
+    "open": "^10.0.3",
+    "prompts": "^2.4.2",
+    "terminate": "^2.8.0"
+  },
+  "packageManager": "pnpm@10.4.1"
+}

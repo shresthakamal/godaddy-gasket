@@ -1,0 +1,18 @@
+/*
+Use this file to define your global styles.
+
+Intent values are resolved via the @ux/postcss-intents PostCSS plugin.
+Use intent('intent.key.here') to reference UX design tokens.
+
+If you have CSS files in node_modules you wish to import,
+it is recommended to import those directly in your _app file.
+*/
+
+.sample-inline-code {
+  font-family: monospace;
+  font-size: .9em;
+  color: inherit;
+  background-color: color-mix(in srgb, currentcolor, transparent 90%);
+  padding: .2em .4em;
+  border-radius: 3px;
+}

@@ -1,0 +1,5 @@
+node_modules
+lib
+cjs
+tsconfig.tsbuildinfo
+tsconfig.build.tsbuildinfo

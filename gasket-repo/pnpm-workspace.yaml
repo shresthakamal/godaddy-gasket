@@ -1,0 +1,7 @@
+packages:
+  - packages/*
+  - scripts/generate-docs-index
+  - tools/gasket-testing-tool
+
+overrides:
+  lodash: "^4.18.1"

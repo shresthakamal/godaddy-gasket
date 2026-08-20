@@ -1,0 +1,13 @@
+import '@gasket/plugin-config';
+import '@gasket/plugin-docs';
+import '@gasket/plugin-docusaurus';
+import '@gasket/plugin-express';
+import '@gasket/plugin-https';
+import '@gasket/plugin-intl';
+import '@gasket/plugin-lint';
+import '@gasket/plugin-swagger';
+import '@godaddy/gasket-plugin-hcs';
+import '@godaddy/gasket-plugin-security';
+import '@godaddy/gasket-plugin-visitor';
+import '@gasket/plugin-winston';
+import '@gasket/plugin-data';

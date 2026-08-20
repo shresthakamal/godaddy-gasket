@@ -1,0 +1,44 @@
+name: OS Gasket Preset Testing
+
+on:
+  workflow_dispatch:
+  # schedule:
+  #   - cron: "0 7 * * 1-5" # 7 am UTC -> 12 am PST, 3 am EST
+
+jobs:
+  run-gasket-app-testing:
+    uses: ./.github/workflows/_shared-gasket-testing.yaml
+    with:
+      app_matrix: >-
+        [
+          "app-router",
+          "app-router-proxy",
+          "app-router-ts",
+          "app-router-ts-proxy",
+          "page-router",
+          "page-router-proxy",
+          "page-router-ts",
+          "page-router-ts-proxy",
+          "page-router-express",
+          "page-router-express-ts",
+          "express",
+          "express-ts",
+          "fastify",
+          "fastify-ts"
+        ]
+      env_vars: |
+        GASKET_CI=1
+        RUN_BUILD=1
+        RUN_START=1
+        RUN_LOCAL=1
+        RUN_TEST=1
+        RUN_DOCS=1
+        EXIT_ON_ERROR=1
+        # VERBOSE=1
+        # OS_PREID=canary
+        # INTERNAL_PREID=canary
+      test_command: 'pnpm'
+      workflow_name: 'gasket-preset-testing'
+      gasket_scope: 'OS'
+    secrets:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}

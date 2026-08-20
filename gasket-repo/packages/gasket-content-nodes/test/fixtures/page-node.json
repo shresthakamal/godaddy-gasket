@@ -1,0 +1,2419 @@
+[
+  "Page",
+  {
+    "entryId": "1KaucL2fhJqvj4HrNonzTw",
+    "path": "domains/domain-backorder",
+    "seoMetadata": [
+      "SeoMetadata",
+      {
+        "entryId": "2y1MKuAJ6BxsehCXM1zqYx",
+        "name": "domain-backorder",
+        "title": [
+          "LocalizedString",
+          {
+            "entryId": "2JAeJ4u9oCT73Pghpr3WEo",
+            "title": "domain-backorder-|-secure-your_1686877486937",
+            "text": [
+              "p",
+              null,
+              [
+                "Domain Backorder | Secure Your Dream Domain - ",
+                [
+                  "Token",
+                  {
+                    "entryId": "213NQJaT8tY39gEMlRAz0A",
+                    "title": "Brand: SEO Name",
+                    "token": "{{ [@T[companyname:nameseotitle]@T] }}"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "description": [
+          "LocalizedString",
+          {
+            "entryId": "5pmHhBseGvKoH0Te8H6pdq",
+            "title": "Is your Domain name already taken? Secure a chance to grab the domain the INSTANT it becomes available with a Domain Backorder.",
+            "text": [
+              "p",
+              null,
+              [
+                "Is your Domain name already taken? Secure a chance to grab the domain the INSTANT it becomes available with a Domain Backorder."
+              ]
+            ]
+          }
+        ],
+        "canonical": "https://www.godaddy.com/domains/domain-backorder",
+        "ogTitle": [
+          "LocalizedString",
+          {
+            "entryId": "2JAeJ4u9oCT73Pghpr3WEo",
+            "title": "domain-backorder-|-secure-your_1686877486937",
+            "text": [
+              "p",
+              null,
+              [
+                "Domain Backorder | Secure Your Dream Domain - ",
+                [
+                  "Token",
+                  {
+                    "entryId": "213NQJaT8tY39gEMlRAz0A",
+                    "title": "Brand: SEO Name",
+                    "token": "{{ [@T[companyname:nameseotitle]@T] }}"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "ogDescription": [
+          "LocalizedString",
+          {
+            "entryId": "5pmHhBseGvKoH0Te8H6pdq",
+            "title": "Is your Domain name already taken? Secure a chance to grab the domain the INSTANT it becomes available with a Domain Backorder.",
+            "text": [
+              "p",
+              null,
+              [
+                "Is your Domain name already taken? Secure a chance to grab the domain the INSTANT it becomes available with a Domain Backorder."
+              ]
+            ]
+          }
+        ],
+        "ogType": "product",
+        "ogImage": [
+          "BynderImage",
+          {
+            "entryId": "jS4AUqCknUPw1JJgQDDTr6",
+            "title": "og-images_1690824016257",
+            "image": [
+              {
+                "id": "A61931F4-B6B5-4AA8-B3E324293BB8957D",
+                "src": "https://www.assets.godaddy/m/bb4e79189b325a13/webimage-OG-images.png",
+                "name": "OG images",
+                "tags": [
+                  "backorder",
+                  "img-OG",
+                  "share-domain",
+                  "social"
+                ],
+                "type": "image",
+                "width": 1200,
+                "height": 630,
+                "archive": 0,
+                "brandId": "3E08DB5E-738C-4B9F-A2509C2E920A01D5",
+                "limited": 0,
+                "fileSize": 100489,
+                "isPublic": 0,
+                "original": null,
+                "copyright": null,
+                "extension": [
+                  "jpg"
+                ],
+                "thumbnails": {
+                  "mini": "https://www.assets.godaddy/m/bb4e79189b325a13/mini-OG-images.png",
+                  "thul": "https://www.assets.godaddy/m/bb4e79189b325a13/thul-OG-images.png",
+                  "webimage": "https://www.assets.godaddy/m/bb4e79189b325a13/webimage-OG-images.png"
+                },
+                "dateCreated": "2023-02-18T19:25:52Z",
+                "description": "OG images",
+                "orientation": "landscape",
+                "watermarked": 0,
+                "dateModified": "2023-02-25T02:54:12Z",
+                "selectedFile": {
+                  "url": "https://www.assets.godaddy/m/bb4e79189b325a13/webimage-OG-images.png",
+                  "width": 800,
+                  "height": 420,
+                  "fileSize": null
+                },
+                "datePublished": null,
+                "videoPreviewURLs": [
+                  
+                ]
+              }
+            ],
+            "preload": "none"
+          }
+        ],
+        "ogSiteName": [
+          "Token",
+          {
+            "entryId": "213NQJaT8tY39gEMlRAz0A",
+            "title": "Brand: SEO Name",
+            "token": "{{ [@T[companyname:nameseotitle]@T] }}"
+          }
+        ],
+        "twitterSite": [
+          "Token",
+          {
+            "entryId": "7EpRGoHAIFbhzb7Tkn7LwK",
+            "title": "Brand: Twitter Handle",
+            "token": "{{ [@T[companyname:twitter]@T] }}"
+          }
+        ],
+        "twitterCard": "summary",
+        "twitterTitle": [
+          "LocalizedString",
+          {
+            "entryId": "2JAeJ4u9oCT73Pghpr3WEo",
+            "title": "domain-backorder-|-secure-your_1686877486937",
+            "text": [
+              "p",
+              null,
+              [
+                "Domain Backorder | Secure Your Dream Domain - ",
+                [
+                  "Token",
+                  {
+                    "entryId": "213NQJaT8tY39gEMlRAz0A",
+                    "title": "Brand: SEO Name",
+                    "token": "{{ [@T[companyname:nameseotitle]@T] }}"
+                  }
+                ]
+              ]
+            ]
+          }
+        ],
+        "twitterDescription": [
+          "LocalizedString",
+          {
+            "entryId": "5pmHhBseGvKoH0Te8H6pdq",
+            "title": "Is your Domain name already taken? Secure a chance to grab the domain the INSTANT it becomes available with a Domain Backorder.",
+            "text": [
+              "p",
+              null,
+              [
+                "Is your Domain name already taken? Secure a chance to grab the domain the INSTANT it becomes available with a Domain Backorder."
+              ]
+            ]
+          }
+        ],
+        "twitterImage": [
+          "BynderImage",
+          {
+            "entryId": "jS4AUqCknUPw1JJgQDDTr6",
+            "title": "og-images_1690824016257",
+            "image": [
+              {
+                "id": "A61931F4-B6B5-4AA8-B3E324293BB8957D",
+                "src": "https://www.assets.godaddy/m/bb4e79189b325a13/webimage-OG-images.png",
+                "name": "OG images",
+                "tags": [
+                  "backorder",
+                  "img-OG",
+                  "share-domain",
+                  "social"
+                ],
+                "type": "image",
+                "width": 1200,
+                "height": 630,
+                "archive": 0,
+                "brandId": "3E08DB5E-738C-4B9F-A2509C2E920A01D5",
+                "limited": 0,
+                "fileSize": 100489,
+                "isPublic": 0,
+                "original": null,
+                "copyright": null,
+                "extension": [
+                  "jpg"
+                ],
+                "thumbnails": {
+                  "mini": "https://www.assets.godaddy/m/bb4e79189b325a13/mini-OG-images.png",
+                  "thul": "https://www.assets.godaddy/m/bb4e79189b325a13/thul-OG-images.png",
+                  "webimage": "https://www.assets.godaddy/m/bb4e79189b325a13/webimage-OG-images.png"
+                },
+                "dateCreated": "2023-02-18T19:25:52Z",
+                "description": "OG images",
+                "orientation": "landscape",
+                "watermarked": 0,
+                "dateModified": "2023-02-25T02:54:12Z",
+                "selectedFile": {
+                  "url": "https://www.assets.godaddy/m/bb4e79189b325a13/webimage-OG-images.png",
+                  "width": 800,
+                  "height": 420,
+                  "fileSize": null
+                },
+                "datePublished": null,
+                "videoPreviewURLs": [
+                  
+                ]
+              }
+            ],
+            "preload": "none"
+          }
+        ]
+      }
+    ],
+    "layout": [
+      "ProductLayout",
+      {
+        "entryId": "6jnH2IGQh3UZ6Iub0lL3RK",
+        "entryTitle": "domains/domain-backorder",
+        "secondaryNav": [
+          "SecondaryNav",
+          {
+            "entryId": "25l2qT8IhsDVaYGsKw6ayL",
+            "entryTitle": "Find a Domain",
+            "title": [
+              "LocalizedString",
+              {
+                "entryId": "6ktLN3DkcKLXDhyxc3BsQ5",
+                "title": "Find a Domain",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "Find a Domain"
+                  ]
+                ]
+              }
+            ],
+            "items": [
+              [
+                "NavItem",
+                {
+                  "entryId": "6irbBK2jPcw0KzuLfZ7DL0",
+                  "entryTitle": "Domain Name Search",
+                  "title": [
+                    "LocalizedString",
+                    {
+                      "entryId": "7Ek2vs1zRPUJSqwsttvTTB",
+                      "title": "domain-name-search_1689286098219",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Domain Name Search"
+                        ]
+                      ]
+                    }
+                  ],
+                  "href": "https://www.godaddy.com/domains",
+                  "trackingName": "find_domain_name_search"
+                }
+              ],
+              [
+                "NavItem",
+                {
+                  "entryId": "gs03aQ2DeTp6y1uUAxXNt",
+                  "entryTitle": "Bulk Domain Search",
+                  "title": [
+                    "LocalizedString",
+                    {
+                      "entryId": "5N7UZ9SdrZje2euKHQYasw",
+                      "title": "Bulk Domain Search",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Bulk Domain Search"
+                        ]
+                      ]
+                    }
+                  ],
+                  "href": "https://www.godaddy.com/domains/bulk-domain-search",
+                  "trackingName": "find_bulk_domain_search"
+                }
+              ],
+              [
+                "NavItem",
+                {
+                  "entryId": "5LrWB5XQXqZm8cNmHJ25T5",
+                  "entryTitle": "Explore Domain Extensions",
+                  "title": [
+                    "LocalizedString",
+                    {
+                      "entryId": "4c0ZkszNAHNDYHrlPccXFt",
+                      "title": "Explore Domain Extensions",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Explore Domain Extensions"
+                        ]
+                      ]
+                    }
+                  ],
+                  "href": "https://www.godaddy.com/domains/gtld-domain-names",
+                  "trackingName": "find_explore_domain_extensions"
+                }
+              ],
+              [
+                "NavItem",
+                {
+                  "entryId": "uPNUhIZMDv4mfiscQNCxs",
+                  "entryTitle": "Domain Backorder",
+                  "title": [
+                    "LocalizedString",
+                    {
+                      "entryId": "3cL3SfEL6hFH7g1qkIx0mC",
+                      "title": "Domain Backorder",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Domain Backorder"
+                        ]
+                      ]
+                    }
+                  ],
+                  "href": "https://www.godaddy.com/domains/domain-backorder",
+                  "trackingName": "find_domain_backorder"
+                }
+              ],
+              [
+                "NavItem",
+                {
+                  "entryId": "6BYTiTDoJ7EHuXnVwb0fJt",
+                  "entryTitle": "Generate Domain & Business Names",
+                  "title": [
+                    "LocalizedString",
+                    {
+                      "entryId": "2jt6TDnjQmXaK2VzT8rfCl",
+                      "title": "Generate Domain & Busines",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Generate Domain & Business Names"
+                        ]
+                      ]
+                    }
+                  ],
+                  "href": "https://www.godaddy.com/domains/domain-name-generator"
+                }
+              ]
+            ],
+            "trackingName": "find_a_domain"
+          }
+        ],
+        "marquee": [
+          "ModuleFullWidthMarquee",
+          {
+            "entryId": "4c0yBzpXjB1lRHECdssc0e",
+            "entryTitle": "Getting your ideal domain doesn’t have to be a dream.",
+            "primaryHeading": [
+              "LocalizedString",
+              {
+                "entryId": "6URzqpvHmVSrzQ7RRBcpoA",
+                "title": "getting-your-ideal-domain-doesn’t_1689026635838",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "Getting your ideal domain doesn’t have to be a dream."
+                  ]
+                ]
+              }
+            ],
+            "primaryEyebrow": [
+              "LocalizedString",
+              {
+                "entryId": "eGqVF2qYOsOLAh7Q1zEGW",
+                "title": "domain-backorders_1689026636549",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "Domain Backorders"
+                  ]
+                ]
+              }
+            ],
+            "primaryEyebrowTag": "h1",
+            "primaryActionsLayout": "button-set",
+            "landscape": [
+              "BynderImage",
+              {
+                "entryId": "2e72ERDZ8YVWyA8nKcquZ6",
+                "title": "img-mrq-domain-backorder-landscape_1690586076123",
+                "image": [
+                  {
+                    "id": "7B09E746-B25B-43D4-BFA54BFD0C4660B7",
+                    "src": "https://www.assets.godaddy/m/5ba67203b04f03e7/webimage-img-mrq-domain_backorder-landscape.png",
+                    "name": "img-mrq-domain_backorder-landscape",
+                    "tags": [
+                      
+                    ],
+                    "type": "image",
+                    "width": 1920,
+                    "height": 738,
+                    "archive": 0,
+                    "brandId": "3E08DB5E-738C-4B9F-A2509C2E920A01D5",
+                    "limited": 0,
+                    "fileSize": 95922,
+                    "isPublic": 0,
+                    "original": null,
+                    "copyright": "GoDaddy",
+                    "extension": [
+                      "jpg"
+                    ],
+                    "thumbnails": {
+                      "mini": "https://www.assets.godaddy/m/5ba67203b04f03e7/mini-img-mrq-domain_backorder-landscape.png",
+                      "thul": "https://www.assets.godaddy/m/5ba67203b04f03e7/thul-img-mrq-domain_backorder-landscape.png",
+                      "webimage": "https://www.assets.godaddy/m/5ba67203b04f03e7/webimage-img-mrq-domain_backorder-landscape.png",
+                      "FullQuality": "https://www.assets.godaddy/transform/FullQuality/7b09e746-b25b-43d4-bfa5-4bfd0c4660b7/img-mrq-domain_backorder-landscape",
+                      "transformBaseUrl": "https://www.assets.godaddy/transform/7b09e746-b25b-43d4-bfa5-4bfd0c4660b7/img-mrq-domain_backorder-landscape"
+                    },
+                    "dateCreated": "2023-02-24T22:27:51Z",
+                    "description": "Domain Backorder NextGen Migration | ICT-1968",
+                    "orientation": "landscape",
+                    "watermarked": 0,
+                    "dateModified": "2023-05-23T16:50:01Z",
+                    "selectedFile": {
+                      "url": "https://www.assets.godaddy/transform/7b09e746-b25b-43d4-bfa5-4bfd0c4660b7/img-mrq-domain_backorder-landscape",
+                      "width": null,
+                      "height": null,
+                      "fileSize": null
+                    },
+                    "datePublished": "2023-02-24T22:25:10Z",
+                    "videoPreviewURLs": [
+                      
+                    ]
+                  }
+                ],
+                "preload": "all"
+              }
+            ],
+            "primaryButtonText": [
+              "LocalizedString",
+              {
+                "entryId": "1VsR4hwRswB9QaTW8UVPx1",
+                "title": "Get Started",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "Get Started"
+                  ]
+                ]
+              }
+            ],
+            "primaryButtonActionUrl": "https://salesproducts.api.godaddy.com/v1/pl/1/package/buy",
+            "primaryDescriptionShort": [
+              "LocalizedRichText",
+              {
+                "entryId": "4XMMbBGfRiAcZB9JEOWIGJ",
+                "title": "as-low-as-/-each_1689379976683",
+                "text": [
+                  "Fragment",
+                  null,
+                  [
+                    [
+                      "p",
+                      null,
+                      [
+                        "As low as"
+                      ]
+                    ],
+                    [
+                      "span",
+                      {
+                        "className": "h6"
+                      },
+                      [
+                        [
+                          "Token",
+                          {
+                            "entryId": "2gZBBfakuDpjZp8mqkKxAR",
+                            "title": "Product #9003 - Yearly Pricing",
+                            "token": "{{ [@T[productprice:<current productid=\"9003\" period=\"yearly\"></current>]@T] }}"
+                          }
+                        ],
+                        [
+                          "RichText",
+                          {
+                            "bold": true
+                          },
+                          [
+                            "/ each"
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              }
+            ],
+            "trackingName": "full_width_marquee",
+            "primaryCtas": [
+              [
+                "CtaButton",
+                {
+                  "entryId": "hDhns3tdf39VNsiOg9SY4",
+                  "entryTitle": "Get Started",
+                  "trackingName": "add_to_cart_button",
+                  "text": [
+                    "LocalizedString",
+                    {
+                      "entryId": "2blvv4dnTkb2YlWgWiVYyi",
+                      "title": "Get Started",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Get Started"
+                        ]
+                      ]
+                    }
+                  ],
+                  "productPackage": "backorders-public-registration",
+                  "action": "https://salesproducts.api.godaddy.com/v1/pl/1/package/buy",
+                  "itemTrackingCode": "slp_backorder",
+                  "width": "auto",
+                  "productPackageTermLengthInMonths": "12",
+                  "size": "default",
+                  "templateName": "addToCart"
+                }
+              ]
+            ],
+            "backgroundColorRgb": "rgb(216,239,239)"
+          }
+        ],
+        "multiColumn": [
+          "ModuleMultiColumn",
+          {
+            "entryId": "23mmwNSrzzRYPZNe20kFcZ",
+            "entryTitle": "Backorder 3 Column no heading",
+            "title": [
+              "LocalizedString",
+              {
+                "entryId": "1L9C7gmyxFBqM3W5h1LBJF",
+                "title": "Backorder 3 Column no hea",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "Backorder 3 Column no heading"
+                  ]
+                ]
+              }
+            ],
+            "items": [
+              [
+                "ModuleMultiColumnItem",
+                {
+                  "entryId": "60COqI41LxuP3WvIDW2xJc",
+                  "entryTitle": "Includes registration cost and ICANN fee.",
+                  "description": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "26uNg2H2TwrOJvrrIfW5Dw",
+                      "title": "includes-registration-cost-and-icann_1689026536193",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Includes registration cost and ICANN fee."
+                        ]
+                      ]
+                    }
+                  ],
+                  "padding": "none"
+                }
+              ],
+              [
+                "ModuleMultiColumnItem",
+                {
+                  "entryId": "4rPcvOHXoQudVJ0Td7aBn8",
+                  "entryTitle": "Free daily monitoring keeps an eye on your domain.",
+                  "description": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "78lVAfSkjzpTlQ8RMmXLRw",
+                      "title": "free-daily-monitoring-keeps-an_1688056356669",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Free daily monitoring keeps an eye on your domain."
+                        ]
+                      ]
+                    }
+                  ],
+                  "padding": "none"
+                }
+              ],
+              [
+                "ModuleMultiColumnItem",
+                {
+                  "entryId": "3rZIzZpVYv8qBrtKIolssU",
+                  "entryTitle": "Valid until successful. If you don't get the domain, just re-assign to a different name.",
+                  "description": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "3YC4RjC9j14K1dKEpVt9zn",
+                      "title": "valid-until-successful.-if-you_1689023647881",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Valid until successful. If you don't get the domain, just re-assign to a different name.^"
+                        ]
+                      ]
+                    }
+                  ],
+                  "padding": "none"
+                }
+              ]
+            ],
+            "columns": 3,
+            "align": "start",
+            "verticalMargin": "medium",
+            "gridlines": false
+          }
+        ],
+        "inlineBanner": [
+          "InlineBanner",
+          {
+            "entryId": "jWukwlux1V65Ho8l2IfiG",
+            "entryTitle": "What is a domain backorder, anyway?",
+            "title": [
+              "LocalizedString",
+              {
+                "entryId": "2NScK5MsFvPOQ4Sb16kR8D",
+                "title": "what-is-a-domain-backorder,_1689023660152",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "What is a domain backorder, anyway?"
+                  ]
+                ]
+              }
+            ],
+            "heading": [
+              "LocalizedString",
+              {
+                "entryId": "3sSmDZSVdUGU1PD0QbUC2I",
+                "title": "what-is-a-domain-backorder,_1689023664715",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "What is a domain backorder, anyway?"
+                  ]
+                ]
+              }
+            ],
+            "description": [
+              "LocalizedRichText",
+              {
+                "entryId": "3wtB6wha3Lkc4QtUcA5iDd",
+                "title": "You know those little numbered tickets that you get at a supermarket?",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "You know those little numbered tickets that you get at a supermarket? A domain backorder is kind of like that. If a previously owned domain becomes available, you’re in line to get it. Of course, there’s a little more to it than that."
+                  ]
+                ]
+              }
+            ],
+            "backgroundColor": "Grey",
+            "textAlign": "center",
+            "verticalMargin": "none",
+            "verticalPadding": "medium",
+            "headlineLength": 1.3,
+            "trackingName": "new_inline_banner"
+          }
+        ],
+        "multiColumn2": [
+          "ModuleMultiColumn",
+          {
+            "entryId": "5C1o35klF0KwS0m16Gpb8e",
+            "entryTitle": "Someone else owns it but you want it. Let’s make that happen.",
+            "title": [
+              "LocalizedString",
+              {
+                "entryId": "7qdbHYwFlFXTQDAonGftcW",
+                "title": "Someone else owns it but ",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "Someone else owns it but you want it. Let’s make that happen."
+                  ]
+                ]
+              }
+            ],
+            "heading": [
+              "LocalizedString",
+              {
+                "entryId": "7skUTnK780jDT3xwY9h0Gp",
+                "title": "Someone else owns it but ",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "Someone else owns it but you want it. Let’s make that happen."
+                  ]
+                ]
+              }
+            ],
+            "items": [
+              [
+                "ModuleMultiColumnItem",
+                {
+                  "entryId": "4Zadf8BdBI0IBSPriIqbdx",
+                  "entryTitle": "Domains are forever (except when they’re not).",
+                  "heading": [
+                    "LocalizedString",
+                    {
+                      "entryId": "68crS7u9fXAXDq3diPC32f",
+                      "title": "Domains are forever (exce",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Domains are forever (except when they’re not)."
+                        ]
+                      ]
+                    }
+                  ],
+                  "headlineSize": "h6",
+                  "headlineLineLength": 3,
+                  "description": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "51396JqrQaUBtowagtKkpB",
+                      "title": "Every year, there are thousands of domains that expire and don’t get renewed for one reason or another. If any of those are the domain you’re after, that’s when we swoop in and get it for you...",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Every year, there are thousands of domains that expire and don’t get renewed for one reason or another. If any of those are the domain you’re after, that’s when we swoop in and get it for you. We can do it with any .com, .co, .info, .org, .net, .me, .mobi, .us or .biz address. "
+                        ]
+                      ]
+                    }
+                  ],
+                  "image": [
+                    "NativeImage",
+                    {
+                      "entryId": "2MuIkNoBJMYSxLiHIt4WEs",
+                      "title": "img illo domains forever svg",
+                      "image": {
+                        "title": "img-illo-domains forever",
+                        "file": {
+                          "url": "//images.ctfassets.net/e0jfbtpr1w58/7wsUGpySn5S6QFruH64vHh/ef54fa9fc88bd4b7869056bed15624b1/img-illo-domains_forever.svg",
+                          "details": {
+                            "size": 43195,
+                            "image": {
+                              "width": 233,
+                              "height": 233
+                            }
+                          },
+                          "fileName": "img-illo-domains_forever.svg",
+                          "contentType": "image/svg+xml"
+                        }
+                      },
+                      "altText": [
+                        "LocalizedString",
+                        {
+                          "entryId": "74qytMp1sCRruPvS7BuyQ7",
+                          "title": "an-illustrated-human-like-\"www\"-character_1691435126587",
+                          "text": [
+                            "p",
+                            null,
+                            [
+                              "An illustrated human-like \"WWW\" character walking holding a banner"
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "headlineTag": "h3"
+                }
+              ],
+              [
+                "ModuleMultiColumnItem",
+                {
+                  "entryId": "6NvTTU1mkW97evPfLDF2wb",
+                  "entryTitle": "Go for the win.",
+                  "heading": [
+                    "LocalizedString",
+                    {
+                      "entryId": "6ps08LB5eQLg4day09Mv5y",
+                      "title": "Go for the win.",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Go for the win."
+                        ]
+                      ]
+                    }
+                  ],
+                  "headlineSize": "h6",
+                  "headlineLineLength": 3,
+                  "description": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "4XH0q6PwyKUy2tyMsYU3tz",
+                      "title": "Your dream domain could be someone else’s, too. If someone else wants the same domain you do, we’ll let you know. At that point, it goes up for auction. You can either bid to win or pass — it’s your call. Either way, someone new is getting that domain. ",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Your dream domain could be someone else’s, too. If someone else wants the same domain you do, we’ll let you know. At that point, it goes up for auction. You can either bid to win or pass — it’s your call. Either way, someone new is getting that domain. "
+                        ]
+                      ]
+                    }
+                  ],
+                  "image": [
+                    "NativeImage",
+                    {
+                      "entryId": "6RVO8FlvFtM33kHi94yL5I",
+                      "title": "img-illo-go-for-the-win_1693339911315",
+                      "image": {
+                        "title": "img-illo-go for the win",
+                        "file": {
+                          "url": "//images.ctfassets.net/e0jfbtpr1w58/7KbTqjPZc2BsoNR5XHlgGF/db9fa4b4b296cc905dd1d90a444ee937/img-illo-go_for_the_win.svg",
+                          "details": {
+                            "size": 15981,
+                            "image": {
+                              "width": 234,
+                              "height": 233
+                            }
+                          },
+                          "fileName": "img-illo-go_for_the_win.svg",
+                          "contentType": "image/svg+xml"
+                        }
+                      },
+                      "altText": [
+                        "LocalizedString",
+                        {
+                          "entryId": "2lHI1vf9umYX0TVlV9tRDS",
+                          "title": "illustration-of-woman-holding-a_1691435473411",
+                          "text": [
+                            "p",
+                            null,
+                            [
+                              "Illustration of woman holding a megaphone."
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "headlineTag": "h3"
+                }
+              ],
+              [
+                "ModuleMultiColumnItem",
+                {
+                  "entryId": "2Q1Gb36zaR0Tm9jWtkhMi6",
+                  "entryTitle": "Get more from your credit.",
+                  "heading": [
+                    "LocalizedString",
+                    {
+                      "entryId": "6zx5zGyquzKJjS2uQ6XyaN",
+                      "title": "Get more from your credit",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Get more from your credit."
+                        ]
+                      ]
+                    }
+                  ],
+                  "headlineSize": "h6",
+                  "headlineLineLength": 3,
+                  "description": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "7nckfcoWA4bAHYK9b91g8F",
+                      "title": "did-you-place-the-winning_1689033107338",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Did you place the winning bid? If so, you're now the proud owner of your dream domain. If you didn't, you can transfer your backorder credits to another domain."
+                        ]
+                      ]
+                    }
+                  ],
+                  "image": [
+                    "NativeImage",
+                    {
+                      "entryId": "1EH4gIoqg3uTVkrDwnRyyf",
+                      "title": "img-illo-credit-more_1693339901461",
+                      "image": {
+                        "title": "img-illo-credit more",
+                        "file": {
+                          "url": "//images.ctfassets.net/e0jfbtpr1w58/vkVtTrQtUsxFxsECEEivU/b64c976479a8f5a83849b6b6efe48231/img-illo-credit_more.svg",
+                          "details": {
+                            "size": 24903,
+                            "image": {
+                              "width": 234,
+                              "height": 233
+                            }
+                          },
+                          "fileName": "img-illo-credit_more.svg",
+                          "contentType": "image/svg+xml"
+                        }
+                      },
+                      "altText": [
+                        "LocalizedString",
+                        {
+                          "entryId": "6NTgxLmJY7teGEyc22xfXG",
+                          "title": "an-illustrated-handshake.-one-hand_1691435687725",
+                          "text": [
+                            "p",
+                            null,
+                            [
+                              "An illustrated handshake. One hand is reaching out from a tablet and the other from a stamp-like shape."
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "headlineTag": "h3"
+                }
+              ]
+            ],
+            "columns": 3,
+            "align": "center",
+            "verticalMargin": "medium",
+            "headlineLineLength": 3,
+            "trackingName": "some_else_owns",
+            "gridlines": false
+          }
+        ],
+        "features": [
+          "FeaturesSection",
+          {
+            "entryId": "stma56eVQKfupFrsKgwOU",
+            "entryTitle": "Options? You've got plenty.",
+            "heading": [
+              "LocalizedString",
+              {
+                "entryId": "14bx5ntmxr7Hl1ANXo2oqg",
+                "title": "Options? You've got plent",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "Options? You've got plenty."
+                  ]
+                ]
+              }
+            ],
+            "headlineTag": "h2",
+            "description": [
+              "LocalizedRichText",
+              {
+                "entryId": "7CTYRQKNRQbD0COmD14aHj",
+                "title": "Whether you won or lost t",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "Whether you won or lost that dream domain, there’s still a ton of opportunity ahead of you. "
+                  ]
+                ]
+              }
+            ],
+            "featureImagePlacement": "start-right",
+            "items": [
+              [
+                "FeaturesContentItem",
+                {
+                  "entryId": "1Cp2V56skIgYzMyyWtvhOO",
+                  "entryTitle": "Let us show you the world of domain investing.",
+                  "heading": [
+                    "LocalizedString",
+                    {
+                      "entryId": "qVVheEXTNnUbGnu554FGB",
+                      "title": "Let us show you the world",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Let us show you the world of domain investing."
+                        ]
+                      ]
+                    }
+                  ],
+                  "description": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "1tznxvFbDa94FyYRblWnwV",
+                      "title": "That’s right,  is a thing",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "That’s right, ",
+                          [
+                            "Link",
+                            {
+                              "entryId": "1CGZTK0dpXE5b8KM4xyiQB",
+                              "id": "domain-investing-link",
+                              "linkText": [
+                                "LocalizedString",
+                                {
+                                  "entryId": "2xsyZUlAEe93a0MsS9DWX7",
+                                  "title": "domain-investing_1686614616346",
+                                  "text": [
+                                    "p",
+                                    null,
+                                    [
+                                      "domain investing"
+                                    ]
+                                  ]
+                                }
+                              ],
+                              "linkToken": [
+                                "Token",
+                                {
+                                  "entryId": "2hJRKlu02ELCEj5nIq0Kv",
+                                  "title": "Relative Link: domains/domain-investing",
+                                  "token": "{{ [@T[link:<relative path=\"domains/domain-investing\"/>]@T] }}"
+                                }
+                              ],
+                              "trackingName": "domain-investing-link",
+                              "appendCurrentPageQuery": false
+                            }
+                          ],
+                          " is a thing. Purchase domains for standard rates, then resell them for profit on our ",
+                          [
+                            "Link",
+                            {
+                              "entryId": "620Ou6iDvd6bUYKWQz3pwa",
+                              "id": "auctions-link",
+                              "linkText": [
+                                "LocalizedString",
+                                {
+                                  "entryId": "17fizAOLjNqHFCjDesywwj",
+                                  "title": "Domain Auction",
+                                  "text": [
+                                    "p",
+                                    null,
+                                    [
+                                      "Domain Auction"
+                                    ]
+                                  ]
+                                }
+                              ],
+                              "linkToken": [
+                                "Token",
+                                {
+                                  "entryId": "17f15zwDHkUhScUf22rANp",
+                                  "title": "External Link: TDNAMURL (auctions)",
+                                  "token": "{{ [@T[link:<external linktype=\"TDNAMURL\" />]@T] }}"
+                                }
+                              ],
+                              "trackingName": "auctions-link",
+                              "appendCurrentPageQuery": false
+                            }
+                          ],
+                          " site. It could make you a little (or a lot of) extra cash, and that’s never a bad thing."
+                        ]
+                      ]
+                    }
+                  ],
+                  "image": [
+                    "BynderImage",
+                    {
+                      "entryId": "zIwT93jD8K5HtJdE5o6dg5",
+                      "title": "img-feat-domain-investing_1690823526416",
+                      "image": [
+                        {
+                          "id": "1F97794D-AF9D-4F37-891775BA5798AA9C",
+                          "src": "https://www.assets.godaddy/m/6de997fe9f3747ce/webimage-img-feat-domain_investing.png",
+                          "name": "img-feat-domain_investing",
+                          "tags": [
+                            
+                          ],
+                          "type": "image",
+                          "width": 1766,
+                          "height": 1396,
+                          "archive": 0,
+                          "brandId": "3E08DB5E-738C-4B9F-A2509C2E920A01D5",
+                          "limited": 0,
+                          "fileSize": 94735,
+                          "isPublic": 0,
+                          "original": null,
+                          "copyright": "GoDaddy",
+                          "extension": [
+                            "jpg"
+                          ],
+                          "thumbnails": {
+                            "mini": "https://www.assets.godaddy/m/6de997fe9f3747ce/mini-img-feat-domain_investing.png",
+                            "thul": "https://www.assets.godaddy/m/6de997fe9f3747ce/thul-img-feat-domain_investing.png",
+                            "webimage": "https://www.assets.godaddy/m/6de997fe9f3747ce/webimage-img-feat-domain_investing.png",
+                            "FullQuality": "https://www.assets.godaddy/transform/FullQuality/1f97794d-af9d-4f37-8917-75ba5798aa9c/img-feat-domain_investing",
+                            "transformBaseUrl": "https://www.assets.godaddy/transform/1f97794d-af9d-4f37-8917-75ba5798aa9c/img-feat-domain_investing"
+                          },
+                          "dateCreated": "2023-02-24T22:27:43Z",
+                          "description": "Domain Backorder NextGen Migration | ICT-1968",
+                          "orientation": "landscape",
+                          "watermarked": 0,
+                          "dateModified": "2023-05-23T16:49:44Z",
+                          "selectedFile": {
+                            "url": "https://www.assets.godaddy/transform/1f97794d-af9d-4f37-8917-75ba5798aa9c/img-feat-domain_investing",
+                            "width": null,
+                            "height": null,
+                            "fileSize": null
+                          },
+                          "datePublished": "2023-02-24T22:25:10Z",
+                          "videoPreviewURLs": [
+                            
+                          ]
+                        }
+                      ],
+                      "preload": "none",
+                      "altText": [
+                        "LocalizedString",
+                        {
+                          "entryId": "6BEVN4wnbuyuutvMIr1N4N",
+                          "title": "img-feat-domain-investing_1686614607519",
+                          "text": [
+                            "p",
+                            null,
+                            [
+                              "Img Feat Domain Investing"
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "layout": "split",
+                  "actionsLayout": "none",
+                  "margin": "none",
+                  "verticalPadding": "none",
+                  "headlineLineLength": 1.5,
+                  "headlineSize": "h3",
+                  "trackingName": "01"
+                }
+              ],
+              [
+                "FeaturesContentItem",
+                {
+                  "entryId": "Bus0zkdudNbmnjKPMxwRA",
+                  "entryTitle": "If you buy a lot, why not save a lot?",
+                  "heading": [
+                    "LocalizedString",
+                    {
+                      "entryId": "21xBPHZGrGT7D2thzd7rkb",
+                      "title": "If you buy a lot, why not",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "If you buy a lot, why not save a lot?"
+                        ]
+                      ]
+                    }
+                  ],
+                  "description": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "dXJqBMK0HFQ0fnUFA1Zub",
+                      "title": "can’t-get-enough-domains?-our_1689033107363",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Can’t get enough domains? Our ",
+                          [
+                            "Link",
+                            {
+                              "entryId": "6UnIWM4sfcO1mX35qZbPrO",
+                              "id": "discount-domain-club",
+                              "linkText": [
+                                "LocalizedString",
+                                {
+                                  "entryId": "7uEBrmbutqmZJYsdXvGrca",
+                                  "title": "Discount Domain Club",
+                                  "text": [
+                                    "p",
+                                    null,
+                                    [
+                                      "Discount Domain Club"
+                                    ]
+                                  ]
+                                }
+                              ],
+                              "linkToken": [
+                                "Token",
+                                {
+                                  "entryId": "8e5P7tujEidBC5VPu6kIM",
+                                  "title": "Relative Link: /domains/discount-domains",
+                                  "token": "{{ [@T[link:<relative path=\"/domains/discount-domain-club\"/>]@T] }}"
+                                }
+                              ],
+                              "trackingName": "discount-domain-club-link",
+                              "appendCurrentPageQuery": false
+                            }
+                          ],
+                          " offers the lowest prices around on new domains, plus a membership to GoDaddy Auctions and CashParking Premium, all for only ",
+                          [
+                            "Token",
+                            {
+                              "entryId": "3b8aNFrnPWIySaPE7leXpm",
+                              "title": "Product #875 - Monthly Pricing",
+                              "token": "{{ [@T[productprice:<current productid=\"875\" period=\"monthly\" />]@T] }}"
+                            }
+                          ],
+                          "/mo. It’s hard to find a better deal than that."
+                        ]
+                      ]
+                    }
+                  ],
+                  "image": [
+                    "BynderImage",
+                    {
+                      "entryId": "iSKFdvXalLhn6fWfyKVO28",
+                      "title": "img-feat-discount-domain-club_1690823781156",
+                      "image": [
+                        {
+                          "id": "8F25FB0A-0667-4FC0-91382566EB4881CC",
+                          "src": "https://www.assets.godaddy/m/3560733caf408638/webimage-img-feat-discount_domain_club.png",
+                          "name": "img-feat-discount_domain_club",
+                          "tags": [
+                            
+                          ],
+                          "type": "image",
+                          "width": 1766,
+                          "height": 1396,
+                          "archive": 0,
+                          "brandId": "3E08DB5E-738C-4B9F-A2509C2E920A01D5",
+                          "limited": 0,
+                          "fileSize": 97668,
+                          "isPublic": 0,
+                          "original": null,
+                          "copyright": "GoDaddy",
+                          "extension": [
+                            "jpg"
+                          ],
+                          "thumbnails": {
+                            "mini": "https://www.assets.godaddy/m/3560733caf408638/mini-img-feat-discount_domain_club.png",
+                            "thul": "https://www.assets.godaddy/m/3560733caf408638/thul-img-feat-discount_domain_club.png",
+                            "webimage": "https://www.assets.godaddy/m/3560733caf408638/webimage-img-feat-discount_domain_club.png",
+                            "FullQuality": "https://www.assets.godaddy/transform/FullQuality/8f25fb0a-0667-4fc0-9138-2566eb4881cc/img-feat-discount_domain_club",
+                            "transformBaseUrl": "https://www.assets.godaddy/transform/8f25fb0a-0667-4fc0-9138-2566eb4881cc/img-feat-discount_domain_club"
+                          },
+                          "dateCreated": "2023-02-24T22:27:43Z",
+                          "description": "Domain Backorder NextGen Migration | ICT-1968",
+                          "orientation": "landscape",
+                          "watermarked": 0,
+                          "dateModified": "2023-05-23T16:49:47Z",
+                          "selectedFile": {
+                            "url": "https://www.assets.godaddy/transform/8f25fb0a-0667-4fc0-9138-2566eb4881cc/img-feat-discount_domain_club",
+                            "width": null,
+                            "height": null,
+                            "fileSize": null
+                          },
+                          "datePublished": "2023-02-24T22:25:10Z",
+                          "videoPreviewURLs": [
+                            
+                          ]
+                        }
+                      ],
+                      "preload": "none",
+                      "altText": [
+                        "LocalizedString",
+                        {
+                          "entryId": "7alMQZsjEgQzKCjUdAQHzb",
+                          "title": "img-feat-discount-domain-club_1683567247766",
+                          "text": [
+                            "p",
+                            null,
+                            [
+                              "Img Feat Discount Domain Club"
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "layout": "split",
+                  "actionsLayout": "none",
+                  "margin": "none",
+                  "verticalPadding": "none",
+                  "headlineLineLength": 1.5,
+                  "headlineSize": "h3",
+                  "trackingName": "02"
+                }
+              ],
+              [
+                "FeaturesContentItem",
+                {
+                  "entryId": "1GWpwS7g2aPHvlpatusNFW",
+                  "entryTitle": "Money for nothing and your checks for free.",
+                  "heading": [
+                    "LocalizedString",
+                    {
+                      "entryId": "5aijQ4aLaE0mR108eRw3Xe",
+                      "title": "Money for nothing and you",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Money for nothing and your checks for free."
+                        ]
+                      ]
+                    }
+                  ],
+                  "description": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "6PFnZomXJPoyvuR8stEVQk",
+                      "title": "have-you-ever-visited-a_1689959429855",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Have you ever visited a website where there’s nothing but ads? That’s the concept behind ",
+                          [
+                            "Link",
+                            {
+                              "entryId": "6vXZKkEy1rNTWoyR2IfNmd",
+                              "id": "cashparking",
+                              "linkText": [
+                                "LocalizedString",
+                                {
+                                  "entryId": "6pWohzn6LRs8kctOnAmRAI",
+                                  "title": "cashparking_1686877482686",
+                                  "text": [
+                                    "p",
+                                    null,
+                                    [
+                                      "CashParking"
+                                    ]
+                                  ]
+                                }
+                              ],
+                              "linkToken": [
+                                "Token",
+                                {
+                                  "entryId": "70DodUz7A1MVMcyukG6dCN",
+                                  "title": "Relative Link: /domains/cashparking",
+                                  "token": "{{ [@T[link:<relative path=\"/domains/cashparking\"/>]@T] }}"
+                                }
+                              ],
+                              "trackingName": "cashparking-link",
+                              "appendCurrentPageQuery": false
+                            }
+                          ],
+                          ", and it can make you some extra cash. You earn 60% of the advertising sales made on the basic plan, and 80% with CashParking Premium. Why not let your domains work for you? "
+                        ]
+                      ]
+                    }
+                  ],
+                  "image": [
+                    "BynderImage",
+                    {
+                      "entryId": "811vWhIs7mN6kreUTcSXu1",
+                      "title": "img-feat-cashparking_1689983953595",
+                      "image": [
+                        {
+                          "archive": 0,
+                          "brandId": "3E08DB5E-738C-4B9F-A2509C2E920A01D5",
+                          "copyright": "GoDaddy",
+                          "dateCreated": "2023-02-24T22:27:40Z",
+                          "dateModified": "2023-05-23T16:49:40Z",
+                          "datePublished": "2023-02-24T22:25:10Z",
+                          "description": "Domain Backorder NextGen Migration | ICT-1968",
+                          "extension": [
+                            "jpg"
+                          ],
+                          "fileSize": 95610,
+                          "height": 1396,
+                          "id": "236B386C-1FF7-451B-BEBF8BB5D56EDC10",
+                          "isPublic": 0,
+                          "limited": 0,
+                          "name": "img-feat-cashparking",
+                          "orientation": "landscape",
+                          "original": null,
+                          "thumbnails": {
+                            "webimage": "https://www.assets.godaddy/m/12cf06921edf9617/webimage-img-feat-cashparking.png",
+                            "thul": "https://www.assets.godaddy/m/12cf06921edf9617/thul-img-feat-cashparking.png",
+                            "mini": "https://www.assets.godaddy/m/12cf06921edf9617/mini-img-feat-cashparking.png",
+                            "transformBaseUrl": "https://www.assets.godaddy/transform/236b386c-1ff7-451b-bebf-8bb5d56edc10/img-feat-cashparking",
+                            "FullQuality": "https://www.assets.godaddy/transform/FullQuality/236b386c-1ff7-451b-bebf-8bb5d56edc10/img-feat-cashparking"
+                          },
+                          "type": "image",
+                          "watermarked": 0,
+                          "width": 1766,
+                          "videoPreviewURLs": [
+                            
+                          ],
+                          "tags": [
+                            
+                          ],
+                          "selectedFile": {
+                            "url": "https://www.assets.godaddy/transform/236b386c-1ff7-451b-bebf-8bb5d56edc10/img-feat-cashparking",
+                            "width": null,
+                            "height": null,
+                            "fileSize": null
+                          },
+                          "src": "https://www.assets.godaddy/m/12cf06921edf9617/webimage-img-feat-cashparking.png"
+                        }
+                      ],
+                      "preload": "none",
+                      "altText": [
+                        "LocalizedString",
+                        {
+                          "entryId": "3tWMNP1qCa0xIYbDfFojhF",
+                          "title": "img-feat-cashparking_1686692929497",
+                          "text": [
+                            "p",
+                            null,
+                            [
+                              "Img Feat Cashparking"
+                            ]
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "layout": "split",
+                  "actionsLayout": "none",
+                  "margin": "none",
+                  "verticalPadding": "none",
+                  "headlineLineLength": 1.5,
+                  "headlineSize": "h3",
+                  "trackingName": "03"
+                }
+              ]
+            ],
+            "trackingName": "feature_content_section"
+          }
+        ],
+        "guides": [
+          "GdGuidesSection",
+          {
+            "entryId": "2nRewqc2pfgrkM0xydP2ut",
+            "entryTitle": "We love to help. Seriously.",
+            "heading": [
+              "LocalizedString",
+              {
+                "entryId": "7hm7PpYMvu00qbDpbV1vcQ",
+                "title": "We love to help. Seriousl",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "We love to help. Seriously."
+                  ]
+                ]
+              }
+            ],
+            "description": [
+              "LocalizedRichText",
+              {
+                "entryId": "3vYWAgfqJaXbmnUor149hr",
+                "title": "Guide - Still not sure what you need",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "Still not sure what you need? Give us a call. We’re happy to help, even if you’re not a customer. Call us at ",
+                    [
+                      "Token",
+                      {
+                        "entryId": "1DLOAUI6VxwL6Y2qggUkBO",
+                        "title": "Support Phone Number",
+                        "token": "{{ [@T[support:<careHomePgPhone/>]@T] }}"
+                      }
+                    ],
+                    " and we'll chat — or get back to you as soon as we can."
+                  ]
+                ]
+              }
+            ],
+            "attribution": [
+              "LocalizedString",
+              {
+                "entryId": "26W69Ohg3H6Gaz9f19EUmu",
+                "title": "olivia-f.\ngodaddy-guide_1687899408632",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "Olivia F.\nGoDaddy Guide"
+                  ]
+                ]
+              }
+            ],
+            "tabletImage": [
+              "BynderImage",
+              {
+                "entryId": "KsDlY9CgPx7ksKZvlLkv1D",
+                "title": "fosmo-77553-ns-guide-image-update_1690822598223",
+                "image": [
+                  {
+                    "id": "35FC8341-25BB-4DC5-8D6850755617AC3B",
+                    "src": "https://www.assets.godaddy/m/1f32b785bbc53dc4/webimage-FOSMO-77553-NS-Guide-Image-Update.png",
+                    "name": "FOSMO-77553 NS Guide Image Update",
+                    "tags": [
+                      
+                    ],
+                    "type": "image",
+                    "width": 1600,
+                    "height": 1200,
+                    "archive": 0,
+                    "brandId": "3E08DB5E-738C-4B9F-A2509C2E920A01D5",
+                    "limited": 0,
+                    "fileSize": 287728,
+                    "isPublic": 0,
+                    "original": null,
+                    "copyright": null,
+                    "extension": [
+                      "jpg"
+                    ],
+                    "thumbnails": {
+                      "mini": "https://www.assets.godaddy/m/1f32b785bbc53dc4/mini-FOSMO-77553-NS-Guide-Image-Update.png",
+                      "thul": "https://www.assets.godaddy/m/1f32b785bbc53dc4/thul-FOSMO-77553-NS-Guide-Image-Update.png",
+                      "webimage": "https://www.assets.godaddy/m/1f32b785bbc53dc4/webimage-FOSMO-77553-NS-Guide-Image-Update.png",
+                      "FullQuality": "https://www.assets.godaddy/transform/FullQuality/35fc8341-25bb-4dc5-8d68-50755617ac3b/FOSMO-77553-NS-Guide-Image-Update",
+                      "transformBaseUrl": "https://www.assets.godaddy/transform/35fc8341-25bb-4dc5-8d68-50755617ac3b/FOSMO-77553-NS-Guide-Image-Update"
+                    },
+                    "dateCreated": "2023-02-18T20:10:51Z",
+                    "description": "FOSMO-77553 NS Guide Image Update",
+                    "orientation": "landscape",
+                    "watermarked": 0,
+                    "dateModified": "2023-02-24T19:19:00Z",
+                    "selectedFile": {
+                      "url": "https://www.assets.godaddy/transform/35fc8341-25bb-4dc5-8d68-50755617ac3b/FOSMO-77553-NS-Guide-Image-Update",
+                      "width": null,
+                      "height": null,
+                      "fileSize": null
+                    },
+                    "datePublished": null,
+                    "videoPreviewURLs": [
+                      
+                    ]
+                  }
+                ],
+                "preload": "none",
+                "altText": [
+                  "LocalizedRichText",
+                  {
+                    "entryId": "3mC7M4dn9EHPwzxBZq1vnd",
+                    "title": "Mrq Guide Ca Olivia",
+                    "text": [
+                      "p",
+                      null,
+                      [
+                        "Mrq Guide Ca Olivia"
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ],
+            "landscapeImage": [
+              "BynderImage",
+              {
+                "entryId": "Gh8yfKWm1F7yPoiy3Ayzn5",
+                "title": "ict-20539---wsb---content_1690822801702",
+                "image": [
+                  {
+                    "id": "A3AB0806-EAB9-479F-AD02F28361A0B56B",
+                    "src": "https://www.assets.godaddy/m/0b63eba0aaa87416/webimage-ICT-20539-WSB-Content-for-Dark-Page-for-SLP-Mega-Marquee.png",
+                    "name": "ICT-20539 - WSB - Content for Dark Page for SLP Mega Marquee",
+                    "tags": [
+                      
+                    ],
+                    "type": "image",
+                    "width": 2560,
+                    "height": 720,
+                    "archive": 0,
+                    "brandId": "3E08DB5E-738C-4B9F-A2509C2E920A01D5",
+                    "limited": 0,
+                    "fileSize": 192188,
+                    "isPublic": 0,
+                    "original": null,
+                    "copyright": "GoDaddy",
+                    "extension": [
+                      "jpeg"
+                    ],
+                    "thumbnails": {
+                      "mini": "https://www.assets.godaddy/m/0b63eba0aaa87416/mini-ICT-20539-WSB-Content-for-Dark-Page-for-SLP-Mega-Marquee.png",
+                      "thul": "https://www.assets.godaddy/m/0b63eba0aaa87416/thul-ICT-20539-WSB-Content-for-Dark-Page-for-SLP-Mega-Marquee.png",
+                      "webimage": "https://www.assets.godaddy/m/0b63eba0aaa87416/webimage-ICT-20539-WSB-Content-for-Dark-Page-for-SLP-Mega-Marquee.png",
+                      "FullQuality": "https://www.assets.godaddy/transform/FullQuality/a3ab0806-eab9-479f-ad02-f28361a0b56b/ICT-20539-WSB-Content-for-Dark-Page-for-SLP-Mega-Marquee",
+                      "transformBaseUrl": "https://www.assets.godaddy/transform/a3ab0806-eab9-479f-ad02-f28361a0b56b/ICT-20539-WSB-Content-for-Dark-Page-for-SLP-Mega-Marquee"
+                    },
+                    "dateCreated": "2023-02-18T20:10:19Z",
+                    "description": "ICT-20539 - WSB - Content for Dark Page for SLP Mega Marquee",
+                    "orientation": "landscape",
+                    "watermarked": 0,
+                    "dateModified": "2023-02-25T02:44:26Z",
+                    "selectedFile": {
+                      "url": "https://www.assets.godaddy/transform/a3ab0806-eab9-479f-ad02-f28361a0b56b/ICT-20539-WSB-Content-for-Dark-Page-for-SLP-Mega-Marquee",
+                      "width": null,
+                      "height": null,
+                      "fileSize": null
+                    },
+                    "datePublished": null,
+                    "videoPreviewURLs": [
+                      
+                    ]
+                  }
+                ],
+                "preload": "none",
+                "altText": [
+                  "LocalizedRichText",
+                  {
+                    "entryId": "3mC7M4dn9EHPwzxBZq1vnd",
+                    "title": "Mrq Guide Ca Olivia",
+                    "text": [
+                      "p",
+                      null,
+                      [
+                        "Mrq Guide Ca Olivia"
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ],
+            "portraitImage": [
+              "BynderImage",
+              {
+                "entryId": "gIYrkuiSZv8BqyEKTaRBkB",
+                "title": "fosmo-77553-ns-guide-image-update_1690822906589",
+                "image": [
+                  {
+                    "id": "DEA47AA8-D6BA-44A8-BCDF0D2D2D6FB848",
+                    "src": "https://www.assets.godaddy/m/a2bd48a876a8fac4/webimage-FOSMO-77553-NS-Guide-Image-Update.png",
+                    "name": "FOSMO-77553 NS Guide Image Update",
+                    "tags": [
+                      
+                    ],
+                    "type": "image",
+                    "width": 900,
+                    "height": 450,
+                    "archive": 0,
+                    "brandId": "3E08DB5E-738C-4B9F-A2509C2E920A01D5",
+                    "limited": 0,
+                    "fileSize": 67683,
+                    "isPublic": 0,
+                    "original": null,
+                    "copyright": null,
+                    "extension": [
+                      "jpg"
+                    ],
+                    "thumbnails": {
+                      "mini": "https://www.assets.godaddy/m/a2bd48a876a8fac4/mini-FOSMO-77553-NS-Guide-Image-Update.png",
+                      "thul": "https://www.assets.godaddy/m/a2bd48a876a8fac4/thul-FOSMO-77553-NS-Guide-Image-Update.png",
+                      "webimage": "https://www.assets.godaddy/m/a2bd48a876a8fac4/webimage-FOSMO-77553-NS-Guide-Image-Update.png",
+                      "FullQuality": "https://www.assets.godaddy/transform/FullQuality/dea47aa8-d6ba-44a8-bcdf-0d2d2d6fb848/FOSMO-77553-NS-Guide-Image-Update",
+                      "transformBaseUrl": "https://www.assets.godaddy/transform/dea47aa8-d6ba-44a8-bcdf-0d2d2d6fb848/FOSMO-77553-NS-Guide-Image-Update"
+                    },
+                    "dateCreated": "2023-02-18T20:11:20Z",
+                    "description": "FOSMO-77553 NS Guide Image Update",
+                    "orientation": "landscape",
+                    "watermarked": 0,
+                    "dateModified": "2023-02-25T06:41:19Z",
+                    "selectedFile": {
+                      "url": "https://www.assets.godaddy/transform/dea47aa8-d6ba-44a8-bcdf-0d2d2d6fb848/FOSMO-77553-NS-Guide-Image-Update",
+                      "width": null,
+                      "height": null,
+                      "fileSize": null
+                    },
+                    "datePublished": null,
+                    "videoPreviewURLs": [
+                      
+                    ]
+                  }
+                ],
+                "preload": "none",
+                "altText": [
+                  "LocalizedRichText",
+                  {
+                    "entryId": "3mC7M4dn9EHPwzxBZq1vnd",
+                    "title": "Mrq Guide Ca Olivia",
+                    "text": [
+                      "p",
+                      null,
+                      [
+                        "Mrq Guide Ca Olivia"
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ],
+            "logoImage": [
+              "BynderImage",
+              {
+                "entryId": "kGXyHdr1WFf758X6FAk86M",
+                "title": "9f28ab19-a64d-4f6e-8a8e-360ec841c451_1690822900364",
+                "image": [
+                  {
+                    "id": "6EF173EE-2869-4A4B-A86A0C1872EFA80C",
+                    "src": "https://www.assets.godaddy/m/eefa1e822a976468/webimage-9F28AB19-A64D-4F6E-8A8E-360EC841C451.jpg",
+                    "name": "9F28AB19-A64D-4F6E-8A8E-360EC841C451",
+                    "tags": [
+                      
+                    ],
+                    "type": "image",
+                    "width": 135,
+                    "height": 18,
+                    "archive": 0,
+                    "brandId": "3E08DB5E-738C-4B9F-A2509C2E920A01D5",
+                    "limited": 0,
+                    "fileSize": 56326,
+                    "isPublic": 0,
+                    "original": null,
+                    "copyright": null,
+                    "extension": [
+                      "svg"
+                    ],
+                    "thumbnails": {
+                      "mini": "https://www.assets.godaddy/m/eefa1e822a976468/mini-9F28AB19-A64D-4F6E-8A8E-360EC841C451.jpg",
+                      "thul": "https://www.assets.godaddy/m/eefa1e822a976468/thul-9F28AB19-A64D-4F6E-8A8E-360EC841C451.jpg",
+                      "webimage": "https://www.assets.godaddy/m/eefa1e822a976468/webimage-9F28AB19-A64D-4F6E-8A8E-360EC841C451.jpg",
+                      "FullQuality": "https://www.assets.godaddy/transform/FullQuality/6ef173ee-2869-4a4b-a86a-0c1872efa80c/9F28AB19-A64D-4F6E-8A8E-360EC841C451",
+                      "transformBaseUrl": "https://www.assets.godaddy/transform/6ef173ee-2869-4a4b-a86a-0c1872efa80c/9F28AB19-A64D-4F6E-8A8E-360EC841C451"
+                    },
+                    "dateCreated": "2023-02-17T22:17:01Z",
+                    "description": null,
+                    "orientation": "landscape",
+                    "watermarked": 0,
+                    "dateModified": "2023-02-24T23:11:27Z",
+                    "selectedFile": {
+                      "url": "https://www.assets.godaddy/transform/6ef173ee-2869-4a4b-a86a-0c1872efa80c/9F28AB19-A64D-4F6E-8A8E-360EC841C451",
+                      "width": null,
+                      "height": null,
+                      "fileSize": null
+                    },
+                    "datePublished": null,
+                    "videoPreviewURLs": [
+                      
+                    ]
+                  }
+                ],
+                "preload": "none",
+                "altText": [
+                  "LocalizedRichText",
+                  {
+                    "entryId": "5RM0BxxkGENu9sVjofN0Qm",
+                    "title": "godaddy-guides-logo_1686870889545",
+                    "text": [
+                      "p",
+                      null,
+                      [
+                        "Godaddy Guides Logo"
+                      ]
+                    ]
+                  }
+                ]
+              }
+            ],
+            "ctaText": [
+              "LocalizedString",
+              {
+                "entryId": "6KvuLRDs51dMLM0i98iXvx",
+                "title": "get-help_1688591102623",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "Get Help"
+                  ]
+                ]
+              }
+            ],
+            "ctaDesign": "merch",
+            "ctaSize": "default",
+            "ctaUrl": "https://www.godaddy.com/help",
+            "trackingName": "godaddy_guides_cta"
+          }
+        ],
+        "faq": [
+          "FaqSection",
+          {
+            "entryId": "33lydF8OL3FtOrDz48Cksf",
+            "entryTitle": "domain-backorder FAQ",
+            "title": [
+              "LocalizedString",
+              {
+                "entryId": "6pYfAC9x2OzUewTkB5tUtb",
+                "title": "domain-backorder FAQ",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "domain-backorder FAQ"
+                  ]
+                ]
+              }
+            ],
+            "trackingName": "faq_section",
+            "heading": [
+              "LocalizedString",
+              {
+                "entryId": "56IopqEelc08rE7RidkRXY",
+                "title": "Frequently Asked Question",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "Frequently Asked Questions"
+                  ]
+                ]
+              }
+            ],
+            "items": [
+              [
+                "FaqSectionItem",
+                {
+                  "entryId": "7H0xeOuGheNlcstIP1tWMi",
+                  "entryTitle": "What is a domain backorder?",
+                  "question": [
+                    "LocalizedString",
+                    {
+                      "entryId": "797QhtDS4cWskYNqHOiMq",
+                      "title": "What is a domain backorde",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "What is a domain backorder?"
+                        ]
+                      ]
+                    }
+                  ],
+                  "answer": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "19eYzRzt1LmMogbAh9HTcN",
+                      "title": "A domain backorder allows",
+                      "text": [
+                        "Fragment",
+                        null,
+                        [
+                          [
+                            "p",
+                            null,
+                            [
+                              "A domain backorder allows you to reserve a domain currently registered to someone else. If that domain name expires, you get a chance to register it before it's available to the public. ",
+                              [
+                                "a",
+                                {
+                                  "href": "https://www.godaddy.com/help/what-happens-after-i-backorder-a-domain-597"
+                                },
+                                [
+                                  "After you backorder a domain name"
+                                ]
+                              ],
+                              ", we check its status daily and send you email notifications whenever there's a change. After the current registration expires, we attempt to capture the domain name before the registry releases it to the public. If we are successful and you are the only backorder holder, you become the domain name registrant. If there are multiple backorder holders, you can participate in an auction to win the domain name."
+                            ]
+                          ],
+                          [
+                            "p",
+                            null,
+                            [
+                              [
+                                "a",
+                                {
+                                  "href": "https://www.godaddy.com/help/what-is-domain-backorder-and-monitoring-576"
+                                },
+                                [
+                                  "Check out our full FAQ help article"
+                                ]
+                              ],
+                              " for more details."
+                            ]
+                          ]
+                        ]
+                      ]
+                    }
+                  ],
+                  "trackingName": "what_is_a_domain_backorder"
+                }
+              ],
+              [
+                "FaqSectionItem",
+                {
+                  "entryId": "5xgcUcg6eN1fnk8x6MNXQv",
+                  "entryTitle": "How do I backorder a domain name at GoDaddy?",
+                  "question": [
+                    "LocalizedString",
+                    {
+                      "entryId": "59u2wRMQghmTihUI35tyKa",
+                      "title": "How do I backorder a doma",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "How do I backorder a domain name at GoDaddy?"
+                        ]
+                      ]
+                    }
+                  ],
+                  "answer": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "1BXv28Z7ljFVrPl7QmcYDX",
+                      "title": "When you backorder a doma",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "When you backorder a domain name, we apply your payment to the domain name when it expires. If you're the only one who backordered the domain name, it's yours at no additional cost. If it goes to auction, we use your backorder payment to place the opening bid. You can continue to bid on the domain name, or simply ",
+                          [
+                            "a",
+                            {
+                              "href": "https://www.godaddy.com/help/change-a-backorder-to-a-different-domain-6007"
+                            },
+                            [
+                              "move your backorder credit to another domain name"
+                            ]
+                          ],
+                          "."
+                        ]
+                      ]
+                    }
+                  ],
+                  "trackingName": "how_do_i_backorder_a_domain"
+                }
+              ],
+              [
+                "FaqSectionItem",
+                {
+                  "entryId": "37eJsabVAUbzkkHrMMvPhv",
+                  "entryTitle": "Are domain backorders guaranteed?",
+                  "question": [
+                    "LocalizedString",
+                    {
+                      "entryId": "1vA4eb0ckdfxqSDVkycQOU",
+                      "title": "are-domain-backorders-guaranteed?_1689023844663",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Are domain backorders guaranteed?"
+                        ]
+                      ]
+                    }
+                  ],
+                  "answer": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "3b4XMeTSKmU3pMN9iTKuQU",
+                      "title": "while-no-domain-backorders-orders_1689033107366",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "While no domain backorders orders are guaranteed, we will make every attempt to acquire it on your behalf. If the current registrant doesn't renew the domain name, we use every registration channel at our disposal to register it for you. Our backorder process gives all of our customers the chance to get the domain names they want. If your domain name backorder is unsuccessful, you can keep the backorder on the same domain to try again the next time it expires. Or, you can ",
+                          [
+                            "a",
+                            {
+                              "href": "https://www.godaddy.com/help/change-a-backorder-to-a-different-domain-6007"
+                            },
+                            [
+                              "change your backorder to a different domain"
+                            ]
+                          ],
+                          " at no cost to you."
+                        ]
+                      ]
+                    }
+                  ],
+                  "trackingName": "are_domain_backorders_guaranteed"
+                }
+              ],
+              [
+                "FaqSectionItem",
+                {
+                  "entryId": "171cbjy3sskxnebIoaWbA7",
+                  "entryTitle": "How do I backorder and register multiple expired domains?",
+                  "question": [
+                    "LocalizedString",
+                    {
+                      "entryId": "6nKGZjfaZ1FEBib24LqMhD",
+                      "title": "How do I backorder and re",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "How do I backorder and register multiple expired domains?"
+                        ]
+                      ]
+                    }
+                  ],
+                  "answer": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "1G7Fw9i2J4wnir1rgmYcJR",
+                      "title": "Check out the FAQ on our ",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          [
+                            "a",
+                            {
+                              "href": "https://www.godaddy.com/domains/bulk-domain-search"
+                            },
+                            [
+                              "Check out the FAQ on our Bulk Search page"
+                            ]
+                          ],
+                          " for info. You can also ",
+                          [
+                            "a",
+                            {
+                              "href": "https://auctions.godaddy.com"
+                            },
+                            [
+                              "search for expiring domains"
+                            ]
+                          ],
+                          " at our GoDaddy Auctions page."
+                        ]
+                      ]
+                    }
+                  ],
+                  "trackingName": "how_do_i_backorder_and_register"
+                }
+              ],
+              [
+                "FaqSectionItem",
+                {
+                  "entryId": "7bs3F0zNsRJjlDsXzwkylZ",
+                  "entryTitle": "How do I know when a backordered domain name becomes available?",
+                  "question": [
+                    "LocalizedString",
+                    {
+                      "entryId": "4IguP5jN8nTBSsHsaM7UXl",
+                      "title": "How do I know when a back",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "How do I know when a backordered domain name becomes available?"
+                        ]
+                      ]
+                    }
+                  ],
+                  "answer": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "5tIzm4fRnmk4JrZSQRwgyM",
+                      "title": "If you purchase a domain ",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "If you purchase a domain name backorder, we notify you as soon as it becomes available. Plus, when you place a backorder at GoDaddy, we give you ",
+                          [
+                            "a",
+                            {
+                              "href": "https://www.godaddy.com/help/set-up-domain-monitoring-579"
+                            },
+                            [
+                              "free daily monitoring tools"
+                            ]
+                          ],
+                          " to keep an eye on the domain name."
+                        ]
+                      ]
+                    }
+                  ],
+                  "trackingName": "how_do_i_know_when_a_backordered"
+                }
+              ],
+              [
+                "FaqSectionItem",
+                {
+                  "entryId": "3QpUiG3agE5TK289A6FWm2",
+                  "entryTitle": "Why should I place my domain backorder at GoDaddy?",
+                  "question": [
+                    "LocalizedString",
+                    {
+                      "entryId": "4ppISLC7AcJkYxk2B0O6wk",
+                      "title": "Why should I place my dom",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Why should I place my domain backorder at GoDaddy?"
+                        ]
+                      ]
+                    }
+                  ],
+                  "answer": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "69QHRCWlQSPV5VCXKuncAL",
+                      "title": "Every domain backorder in",
+                      "text": [
+                        "Fragment",
+                        null,
+                        [
+                          [
+                            "p",
+                            null,
+                            [
+                              "Every domain backorder includes:"
+                            ]
+                          ],
+                          [
+                            "ul",
+                            null,
+                            [
+                              [
+                                "li",
+                                null,
+                                [
+                                  "Free Domain Monitoring"
+                                ]
+                              ],
+                              [
+                                "li",
+                                null,
+                                [
+                                  "A one-year membership to GoDaddy Auctions®"
+                                ]
+                              ],
+                              [
+                                "li",
+                                null,
+                                [
+                                  "One year of domain name registration, with proceeds going toward your first bid if the domain name you backordered goes to auction"
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    }
+                  ],
+                  "trackingName": "why_should_i_place_my_domain"
+                }
+              ],
+              [
+                "FaqSectionItem",
+                {
+                  "entryId": "7w0UW9B8w1c35lMPMXI4wM",
+                  "entryTitle": "How can I monitor my domain backorder?",
+                  "question": [
+                    "LocalizedString",
+                    {
+                      "entryId": "0HcbtPPZ3hZAT9A45HZBR",
+                      "title": "How can I monitor my doma",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "How can I monitor my domain backorder?"
+                        ]
+                      ]
+                    }
+                  ],
+                  "answer": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "7IMpIYO0uvrJVIHti3iQio",
+                      "title": "You can log in to your Go",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "You can log in to your GoDaddy account to ",
+                          [
+                            "a",
+                            {
+                              "href": "https://www.godaddy.com/help/update-my-contact-info-for-backordered-domains-1611"
+                            },
+                            [
+                              "view and monitor your backorder"
+                            ]
+                          ],
+                          " in the Domain Manager. That's where we display all of the important information you need, including status updates and the domain name's expiration date."
+                        ]
+                      ]
+                    }
+                  ],
+                  "trackingName": "how_can_i_monitor_my_domain"
+                }
+              ],
+              [
+                "FaqSectionItem",
+                {
+                  "entryId": "3RHBHnk8Nz62TcwCHtyniX",
+                  "entryTitle": "When can I expect to receive the backordered domain name in my account?",
+                  "question": [
+                    "LocalizedString",
+                    {
+                      "entryId": "7cC48sVWkq9qE0ZA0XJw7h",
+                      "title": "When can I expect to rece",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "When can I expect to receive the backordered domain name in my account?"
+                        ]
+                      ]
+                    }
+                  ],
+                  "answer": [
+                    "LocalizedRichText",
+                    {
+                      "entryId": "3eAJK6a58aBnfJmamXW0OE",
+                      "title": "If we are successful in o",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "If we are successful in our attempt to secure your dream domain, we register the domain name to you and then put it in your account ",
+                          [
+                            "RichText",
+                            {
+                              "bold": true
+                            },
+                            [
+                              "within 45 days"
+                            ]
+                          ],
+                          ". One year of domain name registration is included in the cost of your backorder. Annual discounts are available on NEW purchases only. Products will automatically renew until canceled. You may ",
+                          [
+                            "a",
+                            {
+                              "href": "https://www.godaddy.com/help/turn-off-auto-renew-20008"
+                            },
+                            [
+                              "turn off the auto-renewal"
+                            ]
+                          ],
+                          " feature by visiting your GoDaddy account."
+                        ]
+                      ]
+                    }
+                  ],
+                  "trackingName": "when_can_i_expect"
+                }
+              ]
+            ]
+          }
+        ],
+        "disclaimers": [
+          "DisclaimerModal",
+          {
+            "entryId": "2fvnAz2iZGeubo79TFBaes",
+            "entryTitle": "Domain Backorder Disclaimer",
+            "text": [
+              "LocalizedString",
+              {
+                "entryId": "4gbyDlEAieev3VKrGxWFRG",
+                "title": "^-disclaimers_1689098949673",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "^ Disclaimers"
+                  ]
+                ]
+              }
+            ],
+            "items": [
+              [
+                "DisclaimerModalItem",
+                {
+                  "entryId": "336yBT08IEGHtsZlSHPGlU",
+                  "entryTitle": "Products will automatically renew until canceled",
+                  "text": [
+                    "LocalizedString",
+                    {
+                      "entryId": "4fuysWCcTwwUFvPvQr7Col",
+                      "title": "products-will-automatically-renew-until_1689019956353",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Products will automatically renew until canceled. You may turn off the auto-renewal feature by visiting your GoDaddy account."
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ],
+              [
+                "DisclaimerModalItem",
+                {
+                  "entryId": "5WKPJdJ1V4ClCoo2aZUjQh",
+                  "entryTitle": "Second Disclaimer Modal Item",
+                  "text": [
+                    "LocalizedString",
+                    {
+                      "entryId": "3TAJRrd3AJbeMJVW0Atl3n",
+                      "title": "third-party-logos-and-marks-are_1689020384804",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "Third-party logos and marks are registered trademarks of their respective owners. All rights reserved."
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ],
+              [
+                "DisclaimerModalItem",
+                {
+                  "entryId": "1w9OSe9kU1ZsjngOVIXj01",
+                  "entryTitle": "^ Domain backorders expire three years after purchase.",
+                  "text": [
+                    "LocalizedString",
+                    {
+                      "entryId": "68OuR81NFxrgCcviqsqgFC",
+                      "title": "^ domain-backorders-expire-three-years_1689024969051",
+                      "text": [
+                        "p",
+                        null,
+                        [
+                          "^ Domain backorders expire three years after purchase."
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ],
+            "verticalMargin": "small",
+            "trackingName": "disclaimer_modal"
+          }
+        ],
+        "breadcrumbs": [
+          "Breadcrumbs",
+          {
+            "entryId": "2VnAZliJjeN9kxuc90Vncg",
+            "entryTitle": "Domain Backorder",
+            "logoAriaLabel": [
+              "LocalizedString",
+              {
+                "entryId": "22H5CWXr50qk4Ts0zZJhsz",
+                "title": "GoDaddy",
+                "text": [
+                  "p",
+                  null,
+                  [
+                    "GoDaddy"
+                  ]
+                ]
+              }
+            ],
+            "currentUrl": "https://www.godaddy.com",
+            "path": "/domains/domain-backorder"
+          }
+        ]
+      }
+    ]
+  }
+]

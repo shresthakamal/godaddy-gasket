@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "target": "ES2022",
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+    "declaration": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "outDir": "lib",
+    "rootDir": "src",
+    "noEmitOnError": true,
+    "downlevelIteration": true,
+    "types": [
+      "@gasket/core",
+      "@gasket/plugin-logger",
+      "@gasket/plugin-metadata",
+      "@godaddy/gasket-plugin-content"
+    ]
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

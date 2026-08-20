@@ -1,0 +1,71 @@
+{
+  "name": "@godaddy/gasket-plugin-dev-certs",
+  "version": "3.5.2",
+  "description": "Plugin to add local dev certs for Gasket apps",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "certs",
+    "lib",
+    "cjs",
+    "EXAMPLES.md"
+  ],
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./cjs/index.cjs",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "gasket-cjs ./lib",
+    "lint": "eslint .",
+    "lint:fix": "pnpm run lint --fix",
+    "posttest": "pnpm run build && pnpm run lint && pnpm run typecheck",
+    "prepublishOnly": "node scripts/prefetch-certs.js",
+    "test": "vitest run --globals",
+    "test:coverage": "pnpm test --coverage",
+    "test:watch": "vitest --globals",
+    "typecheck": "tsc",
+    "typecheck:watch": "pnpm run typecheck --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gdcorp-uxp/gasket.git",
+    "directory": "packages/gasket-plugin-dev-certs"
+  },
+  "publishConfig": {
+    "registry": "https://gdartifactory1.jfrog.io/artifactory/api/npm/npm-gasket-core-local/"
+  },
+  "keywords": [
+    "certs",
+    "gasket",
+    "plugin"
+  ],
+  "author": "GoDaddy Operating Company, LLC",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/gdcorp-uxp/gasket/tree/main/packages/gasket-plugin-dev-certs",
+  "dependencies": {
+    "@gd-internal/ssojwt": "^6.0.0",
+    "content-disposition": "^0.5.4",
+    "lodash": "^4.18.1",
+    "mkdirp": "^1.0.4",
+    "node-fetch": "^2.7.0",
+    "rxjs": "^7.8.2",
+    "x509.js": "^1.0.0"
+  },
+  "devDependencies": {
+    "@gasket/cjs": "^7.0.2",
+    "@gasket/core": "^7.7.3",
+    "@gasket/plugin-command": "^7.5.1",
+    "@gasket/plugin-https": "^7.3.8",
+    "@gasket/plugin-metadata": "^7.4.4",
+    "@gasket/plugin-webpack": "^7.4.0",
+    "@types/node": "^22.18.6",
+    "create-gasket-app": "^7.4.19",
+    "typescript": "^5.8.2",
+    "vitest": "^3.2.0"
+  }
+}

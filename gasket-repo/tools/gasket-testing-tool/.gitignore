@@ -1,0 +1,4 @@
+/node_modules
+/__apps__
+.env
+.reports

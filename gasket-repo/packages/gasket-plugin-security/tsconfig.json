@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "downlevelIteration": true,
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "target": "es2022",
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "types": [
+      "@types/node"
+    ]
+  },
+  "include": [
+    "lib",
+    "test"
+  ],
+  "exclude": [
+    "coverage",
+    "cjs"
+  ]
+}

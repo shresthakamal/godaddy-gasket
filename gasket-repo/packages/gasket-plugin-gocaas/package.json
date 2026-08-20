@@ -1,0 +1,56 @@
+{
+  "name": "@godaddy/gasket-plugin-gocaas",
+  "version": "3.4.0",
+  "description": "GoCaas plugin for Gasket",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "cjs",
+    "EXAMPLES.md"
+  ],
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./cjs/index.cjs",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "gasket-cjs ./lib",
+    "lint": "eslint .",
+    "lint:fix": "pnpm run lint --fix",
+    "posttest": "pnpm run build && pnpm run lint && pnpm run typecheck",
+    "test": "vitest run --globals",
+    "test:coverage": "pnpm test --coverage",
+    "test:watch": "vitest --globals",
+    "typecheck": "tsc",
+    "typecheck:watch": "pnpm run typecheck --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gdcorp-uxp/gasket.git",
+    "directory": "packages/gasket-plugin-gocaas"
+  },
+  "publishConfig": {
+    "registry": "https://gdartifactory1.jfrog.io/artifactory/api/npm/npm-gasket-core-local/"
+  },
+  "author": "GoDaddy Operating Company, LLC",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/gdcorp-uxp/gasket/tree/main/packages/gasket-plugin-gocaas",
+  "dependencies": {
+    "@godaddy/caas": "^0.5.37",
+    "@godaddy/gasket-plugin-jwt": "workspace:^"
+  },
+  "devDependencies": {
+    "@gasket/cjs": "^7.0.2",
+    "@gasket/core": "^7.7.3",
+    "@gasket/plugin-metadata": "^7.4.4",
+    "@types/node": "^22.18.6",
+    "eslint-plugin-json": "^3.1.0",
+    "typescript": "^5.8.2",
+    "vitest": "^3.2.0"
+  }
+}

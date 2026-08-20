@@ -1,0 +1,4 @@
+{
+  "dependencies": {  },
+  "devDependencies": { "@ux/uxcore2": "^1.0.0" }
+}

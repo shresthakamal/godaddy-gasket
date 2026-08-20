@@ -1,0 +1,75 @@
+{
+  "name": "@godaddy/gasket-plugin-otel",
+  "version": "3.5.4",
+  "description": "OpenTelemetry plugin for Gasket",
+  "type": "module",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "generator",
+    "EXAMPLES.md",
+    "cjs"
+  ],
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./lib/index.js",
+      "require": "./cjs/index.cjs",
+      "default": "./lib/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "gasket-cjs ./lib",
+    "clean": "rimraf cjs",
+    "lint": "eslint .",
+    "lint:fix": "pnpm run lint --fix",
+    "posttest": "pnpm run lint && pnpm run typecheck",
+    "prepublishOnly": "pnpm run build",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "test:watch": "vitest",
+    "typecheck": "tsc",
+    "typecheck:watch": "pnpm run typecheck --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gdcorp-uxp/gasket.git",
+    "directory": "packages/gasket-plugin-otel"
+  },
+  "publishConfig": {
+    "registry": "https://gdartifactory1.jfrog.io/artifactory/api/npm/npm-gasket-core-local/"
+  },
+  "keywords": [
+    "gasket",
+    "middleware",
+    "opentelemetry",
+    "otel",
+    "plugin"
+  ],
+  "author": "GoDaddy Operating Company, LLC",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/gdcorp-uxp/gasket/tree/main/packages/gasket-plugin-otel",
+  "dependencies": {
+    "@gasket/request": "^7.4.3",
+    "@godaddy/gasket-otel": "workspace:^",
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/api-logs": "^0.219.0",
+    "@opentelemetry/instrumentation": "^0.219.0",
+    "@opentelemetry/sdk-logs": "^0.219.0",
+    "@vercel/otel": "^2.1.3"
+  },
+  "devDependencies": {
+    "@gasket/cjs": "^7.0.2",
+    "@gasket/core": "^7.7.3",
+    "@gasket/plugin-logger": "^7.3.5",
+    "@gasket/plugin-metadata": "^7.4.4",
+    "@gasket/plugin-middleware": "^7.4.3",
+    "@types/node": "^22.18.6",
+    "typescript": "^5.8.2",
+    "vitest": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

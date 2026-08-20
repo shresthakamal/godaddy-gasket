@@ -1,0 +1,13 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Footer component > renders 1`] = `
+<div>
+  Footer Component
+</div>
+`;
+
+exports[`Footer component > renders with manifest HOC 1`] = `
+<div>
+  Footer
+</div>
+`;

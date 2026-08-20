@@ -1,0 +1,59 @@
+name: Weekly Support Announcement
+
+on:
+  schedule:
+    - cron: '0 14 * * 1' # Triggers every Monday at 7:00 AM AZ time
+  workflow_dispatch:
+
+jobs:
+  notify-support:
+    name: Announce Weekly Support
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Determine current support person
+        id: support
+        run: |
+          # Define the rotation order
+          rotation=(
+            # "Kawika Bader (<@WV449BEU9>)"
+            "Andrew Gerard (<@W0102C8BDM4>)"
+            # "Bree Betts (<@U03CT23AQ3W>)"
+            "Michael Mason (<@U03EXT63USV>)"
+            "Jordan Pina (<@U03HGKB4D9T>)"
+          )
+
+          # Set the start date of the rotation (must be a Monday)
+          anchor_date="2025-05-05"
+
+          # Get today's date in UTC (to avoid local timezone discrepancies)
+          today=$(date -u +%Y-%m-%d)
+
+          # Calculate the number of seconds between today and the anchor date
+          seconds_since_anchor=$(( $(date -d "$today" +%s) - $(date -d "$anchor_date" +%s) ))
+
+          # Convert seconds into weeks (604800 seconds per week)
+          weeks_elapsed=$(( seconds_since_anchor / 604800 ))
+
+          # Use modulo to cycle through the rotation
+          index=$(( weeks_elapsed % ${#rotation[@]} ))
+
+          # Select the current support person
+          support_person="${rotation[$index]}"
+
+          # Pass the support person as output to use in later steps
+          echo "support_person=$support_person" >> "$GITHUB_OUTPUT"
+
+      - name: Send Slack message
+        # Only run if the Slack webhook secret is available
+        if: env.SLACK_WEBHOOK_URL != ''
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SUPPORT_PERSON: ${{ steps.support.outputs.support_person }}
+        run: |
+          echo "Sending Slack notification: $SUPPORT_PERSON"
+
+          # Post a message to Slack with the current support person
+          curl -X POST -H 'Content-type: application/json' --data \
+            "{\"text\":\"🤝 Support this week: $SUPPORT_PERSON\"}" \
+            "$SLACK_WEBHOOK_URL"

@@ -1,0 +1,164 @@
+name: Continuous Integration
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+      - lts
+
+permissions:
+  id-token: write # This is required for GitHub to issue OIDC tokens
+  contents: read
+  pull-requests: read
+
+env:
+  AWS_REGION: us-west-2
+
+# Avoid redundant runs for same PRs
+concurrency:
+  group: ci-${{ github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Check what files have changed to determine which jobs should run
+  Changes:
+    runs-on: ubuntu-latest
+    outputs:
+      templates: ${{ steps.changes.outputs.templates }}
+      code: ${{ steps.changes.outputs.code }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Detect Changes
+        uses: dorny/paths-filter@v4
+        id: changes
+        with:
+          filters: |
+            templates:
+              - 'packages/**/template/**'
+            code:
+              - '**'
+              - '!packages/**/template/**'
+              - '!**/*.md'
+
+  UnitTests:
+    needs: Changes
+    if: needs.Changes.outputs.code == 'true'
+    runs-on:
+      group: 6216-uxpci0
+      labels: self-hosted
+
+    strategy:
+      matrix:
+        node-version: [
+          20.x,
+          22.x,
+          24.x
+        ]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.1.0 # TODO: upgrade to v5+ when pnpm/action-setup#234 is fixed (v6 requires npm on PATH)
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - name: Get Artifactory Read-Only Token
+        uses: jfrog/setup-jfrog-cli@1641575d87647fb969c0545f0b6a76873e328b7c # v5.0.0
+        id: jfrog
+        env:
+          JF_URL: ${{ vars.JF_URL }} # This variable is configured org wide
+        with:
+          oidc-provider-name: github
+
+      - name: Install Dependencies
+        run: pnpm install --prefer-offline
+        env:
+          ARTIFACTORY_TOKEN: ${{ steps.jfrog.outputs.oidc-token }}
+          NPM_CONFIG_USERCONFIG: ${{ github.workspace }}/.npmrc.gha
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Test & Lint
+        run: pnpm run test
+        env:
+          CERT_API_TOKEN: mock-token
+
+  TemplateTests:
+    needs: Changes
+    if: needs.Changes.outputs.templates == 'true'
+    runs-on:
+      group: 6216-uxpci0
+      labels: self-hosted
+
+    strategy:
+      matrix:
+        node-version: [
+          20.x,
+          22.x,
+          24.x
+        ]
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4.1.0 # TODO: upgrade to v5+ when pnpm/action-setup#234 is fixed (v6 requires npm on PATH)
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: pnpm
+
+      - name: Get Artifactory Read-Only Token
+        uses: jfrog/setup-jfrog-cli@1641575d87647fb969c0545f0b6a76873e328b7c # v5.0.0
+        id: jfrog
+        env:
+          JF_URL: ${{ vars.JF_URL }} # This variable is configured org wide
+        with:
+          oidc-provider-name: github
+
+      - name: Install dependencies
+        run: pnpm install --prefer-offline
+        env:
+          ARTIFACTORY_TOKEN: ${{ steps.jfrog.outputs.oidc-token }}
+          NPM_CONFIG_USERCONFIG: ${{ github.workspace }}/.npmrc.gha
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Validate Templates
+        run: |
+          pnpm run templates:validate-dotfiles
+          pnpm run templates:validate
+        env:
+          ARTIFACTORY_TOKEN: ${{ steps.jfrog.outputs.oidc-token }}
+          NPM_CONFIG_USERCONFIG: ${{ github.workspace }}/.npmrc.gha
+
+  Complete:
+    name: CI Success
+    needs: [UnitTests, TemplateTests]
+    if: always()
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check for Failures
+        run: |
+          if [ "${{ needs.UnitTests.result }}" == "failure" ] || \
+            [ "${{ needs.TemplateTests.result }}" == "failure" ]; then
+            echo "One or more jobs failed. Please check the logs."
+            exit 1
+          fi
+          echo "All jobs completed successfully."
